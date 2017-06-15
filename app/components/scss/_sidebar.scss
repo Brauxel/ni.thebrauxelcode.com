@@ -1,0 +1,97 @@
+.sidebar {
+	color: $sidebar-text-color;
+	
+	.sidebar-form {
+		color: $white;
+		
+		@include media-breakpoint-up(lg) {
+			&.row {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+		}
+		
+		h5 {
+			text-transform: uppercase;
+			line-height: 1.5;
+		}
+		
+		label {
+			text-align: left;
+			line-height: 1;
+			margin-left: 5px;
+			font-size: 1.4rem;
+		}
+		
+		.btn-outline-primary {
+			font-weight: bold;
+			@include button-size(1.5rem, 4.5rem, $font-size-blog-listing, 0);
+			
+			@include media-breakpoint-up(lg) {
+				width: 100%;
+				@include button-size(1.5rem, 0rem, $font-size-blog-listing, 0);
+			}
+		}
+	}
+	
+	.btn-outline-primary {
+		@include button-outline-variant($sidebar-text-color, #fff);
+		@include button-size(1.5rem, 3.5rem, $font-size-blog-listing, 0);
+		
+		@include media-breakpoint-up(lg) {
+			width: 100%;
+			@include button-size(1.5rem, 0rem, 1.4rem, 0);
+		}
+		@include media-breakpoint-up(xl) {
+			@include button-size(1.5rem, 0rem, 1.4rem, 0);
+		}
+	}
+	
+	.btn-secondary {
+		text-transform: uppercase;
+		@include button-variant($white, $sidebar-secondary-btn-bg, $sidebar-secondary-btn-bg);
+		@include button-size($btn-padding-y, $btn-padding-x, $font-size-blog-listing, $btn-border-radius);
+		
+		@include media-breakpoint-up(lg) {
+			width: 100%;
+			white-space: normal;
+			@include button-size($btn-padding-y, 0rem, 1rem, $btn-border-radius);
+		}
+		@include media-breakpoint-up(xl) {
+			@include button-size($btn-padding-y, 0rem, $font-size-blog-listing, $btn-border-radius);
+		}
+	}
+
+	.raisebook-panel {
+		background-color: #AEA283;
+		
+		@include media-breakpoint-up(lg) {
+			.padding-reset {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	}
+	
+	.company-logo {
+		font-size: 1.6rem;
+	}
+	
+	.social-icons {
+		width: 128px;
+		
+		li {
+			padding-left: 3px;
+			padding-right: 3px;
+			
+			a {
+				width: 26px;
+				
+				svg {
+					width: 100%;
+					height: 26px;
+				}
+			}
+		}
+	}
+}

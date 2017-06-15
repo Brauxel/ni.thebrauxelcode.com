@@ -1,0 +1,169 @@
+.blog-9 {
+	.jumbotron {
+			background-image: url(components/images/banners/nmb.jpg);
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nmb-brand-color);
+		}
+	}
+	
+	.articles {
+		.btn-outline-primary {
+			@include button-outline-variant($nmb-brand-color, #fff);
+		}
+	}
+	
+	.page-link {
+		//background-color: $nmb-brand-color;
+		border: none;
+		//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
+		
+		&:hover, &:active, &.active {
+			background-color: $nmb-brand-color;
+		}
+	}
+	
+	.sidebar-form {
+		background-color: $nmb-brand-color;
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nmb-brand-color);
+		}
+	}
+}
+
+.blog-10 {
+	.jumbotron {
+			background-image: url(components/images/banners/nor.jpg);
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nor-brand-color);
+		}
+	}
+	
+	.articles {
+		.btn-outline-primary {
+			@include button-outline-variant($nor-brand-color, #fff);
+		}
+	}
+	
+	.page-link {
+		//background-color: $nor-brand-color;
+		border: none;
+		//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
+		
+		&:hover, &:active, &:focus {
+			background-color: $nor-brand-color;
+		}
+	}
+	
+	.sidebar-form {
+		background-color: $nor-brand-color;
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nor-brand-color);
+		}
+	}
+}
+
+.blog-13 {
+	.jumbotron {
+			background-image: url(components/images/banners/nsc.jpg);
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nsc-brand-color);
+		}
+	}
+	
+	.articles {
+		.btn-outline-primary {
+			@include button-outline-variant($nsc-brand-color, #fff);
+		}
+	}
+	
+	.page-link {
+		//background-color: $nor-brand-color;
+		border: none;
+		//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
+		
+		&:hover, &:active, &:focus {
+			background-color: $nsc-brand-color;
+		}
+	}
+	
+	.sidebar-form {
+		background-color: $nsc-brand-color;
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nsc-brand-color);
+		}
+	}
+}
+
+.blog-12 {
+	.jumbotron {
+			background-image: url(components/images/banners/nts.jpg);
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nts-brand-color);
+		}
+	}
+	
+	.articles {
+		.btn-outline-primary {
+			@include button-outline-variant($nts-brand-color, #fff);
+		}
+	}
+	
+	.page-link {
+		//background-color: $nor-brand-color;
+		border: none;
+		//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
+		
+		&:hover, &:active, &:focus {
+			background-color: $nts-brand-color;
+		}
+	}
+	
+	.sidebar-form {
+		background-color: $nts-brand-color;
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nts-brand-color);
+		}
+	}
+}
+
+.blog-15 {
+	.jumbotron {
+			background-image: url(components/images/banners/nbt.jpg);
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nbt-brand-color);
+		}
+	}
+	
+	.articles {
+		.btn-outline-primary {
+			@include button-outline-variant($nbt-brand-color, #fff);
+		}
+	}
+	
+	.page-link {
+		//background-color: $nor-brand-color;
+		border: none;
+		//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
+		
+		&:hover, &:active, &:focus {
+			background-color: $nbt-brand-color;
+		}
+	}
+	
+	.sidebar-form {
+		background-color: $nbt-brand-color;
+		
+		.btn-outline-primary {
+			@include button-outline-variant($white, $nbt-brand-color);
+		}
+	}
+}

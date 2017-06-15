@@ -1,0 +1,38 @@
+footer {
+	background-color: $light-black;
+	color: $white;
+	padding-bottom: 1.5rem;
+	font-size: 1.2rem;
+		
+	ul {
+		font-size: 1.4rem;
+		padding-left: 15px;
+
+		li {
+			a {
+				color: $white;
+
+				&:hover {
+					color:$white;
+				}
+			}
+		}
+
+		&.social-icons {
+			padding-left: 0px;
+		}
+	}
+
+	.button-2 {
+		margin-top: 1rem;
+	}
+	
+	.sub-footer {
+		font-size: 1.1rem;
+		margin-top: 4rem;
+		
+		@include media-breakpoint-up(md) {
+			margin-top: 13rem;
+		}
+	}
+}

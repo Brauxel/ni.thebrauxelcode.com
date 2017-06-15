@@ -1,0 +1,164 @@
+header {
+	background: transparent;
+	opacity: 1;
+	font-size: 1.5rem;
+	z-index: $zindex-fixed;
+	width: 100%;
+	
+	@include media-breakpoint-up(lg) {
+		background: $black;
+		opacity: 0.6;
+	}
+	
+	.navbar-toggler {
+		display: block;
+			
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+	
+	nav {
+		transition: all 0.2s ease-out 0s;
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		width: 280px;
+		background-color: $light-black;
+		opacity: 1;
+		z-index: $zindex-navbar;
+		height: 100vh;
+		overflow: scroll;
+		right: -280px;
+		padding: 0px;
+		
+		&.show {
+			right: 0px;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			width: auto;
+			right: 0px;
+			left: 0px;
+			height: auto;
+			position: relative;
+			background-color: transparent;
+			overflow: hidden;
+		}
+		
+		.navbar-close {
+			background-color: transparent;
+			border: none;
+			color: #fff;
+			font-size: 3rem;
+			margin-top: 15px;
+			margin-bottom: 10px;
+			display: block;
+			
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
+		
+		ul {
+			list-style-type: none;
+			margin-bottom: 0px;
+			text-transform: uppercase;
+			
+			&.row {
+				padding-left: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				padding-right: 0px;
+			}
+				
+			&.text-left {
+				@include media-breakpoint-up(lg) {
+					text-align: center;
+				}
+			}
+			
+			li {
+				float: none;
+				
+				a {
+					color: #fff;
+					display: block;
+					font-size: 1.3rem;
+					line-height: 4;
+					padding: 0 0px;
+					text-transform: uppercase;
+					
+					@include media-breakpoint-up(lg) {
+						line-height: 2.8;
+						font-size: 1.1rem;
+					}
+					
+					@include media-breakpoint-up(xl) {
+						font-size: 1.3rem;
+					}
+
+					&:hover {
+						color: #fff;
+						text-decoration: none;
+					}
+					
+				}
+				
+				&:first-child {
+					@include media-breakpoint-up(lg) {
+						padding-left: 0px;
+					}
+				}
+				
+				&:last-child {
+					@include media-breakpoint-up(lg) {
+						padding-right: 0px;
+					}
+				}
+			}
+		}
+		
+		a {
+			&.btn-outline-primary {
+				margin: 10px 15px 0px;
+				@include button-size($btn-padding-y, 1rem, 0.9rem, $btn-border-radius);
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+			}
+			
+			&.manage {
+				color: #a9a9aa;
+				display: inline-block;
+				font-size: 1.2rem;
+				line-height: 37px;
+				text-decoration: underline;
+				text-transform: uppercase;
+				display: block;
+				margin: 10px 15px 20px 15px;;
+				
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	.navbar-form {
+		display: none;
+		
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
+		
+		&.navbar-res {
+			display: block;
+			padding: 0px 15px;
+			
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
+	}
+}

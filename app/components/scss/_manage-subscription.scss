@@ -1,0 +1,227 @@
+.page-template-subscribe-template {
+	main {
+		padding-top: 65px;
+		
+		.btn-outline-primary {
+			@include button-outline-variant($light-black, $white);
+		}
+		
+		.dark {
+			background-color: $light-black;
+			font-size: 1.6rem;
+			color: $white;
+			padding-top: 5rem;
+			padding-bottom: 4rem;
+
+			@include media-breakpoint-up(lg) {
+				padding-top: 65px;
+				padding-bottom: 70px;
+			}
+
+			.btn-outline-primary {
+				@include button-size($btn-padding-y, 3rem, $btn-primary-font-size, $btn-border-radius);
+			}
+
+			&.get-updates {
+				h3 {
+					font-size: 1.3rem;
+
+					@include media-breakpoint-up(md) {
+						font-size: 2rem;
+					}
+				}
+
+				.gform_wrapper {
+					margin-top: 0px;
+					margin-bottom: 0px;
+
+					form {
+						padding: 0px;
+
+						.gform_heading {
+							h3 {
+								margin-top: 0px;
+								margin-bottom: 1rem;
+							}
+						}
+
+						.gform_body {
+							padding-top: 0px;
+							padding-bottom: 0px;
+
+							.gform_fields {
+								.gfield {
+									&.hidden_label {
+										@include media-breakpoint-up(md) {
+											display: flex;
+											flex-wrap: wrap;
+										}
+										
+										&.hider {
+											display: none;
+										}
+										
+										
+										label {
+											@include media-breakpoint-up(md) {
+												display: block;
+												margin-top: 0rem !important;
+												flex: 0 0 20%;
+												max-width: 20%;
+												line-height: 1.8;
+											}
+											@include media-breakpoint-up(lg) {
+												flex: 0 0 15%;
+												max-width: 15%;
+											}
+										}
+										
+										.ginput_container {
+											@include media-breakpoint-up(md) {
+												max-width: 80%;
+												flex: 0 0 80%;
+											}
+											@include media-breakpoint-up(lg) {
+												max-width: 85%;
+												flex: 0 0 85%;
+											}
+										}
+									}
+									&.manage-controls {
+										width: 100%;
+										overflow: hidden;
+										flex: 0 0 100%;
+										max-width: 100%;
+										display: none;
+
+										.btn-outline-primary {
+											width: 289px;
+											margin: 0 auto;
+											margin-top: 1.5rem;
+											display: block;
+											@include button-size($btn-padding-y, 1rem, 1.4rem, $btn-border-radius);
+
+											&.keep-me-informed {
+												visibility: hidden !important;
+												transition: all 0.2s ease-out 0s;
+
+												&.show {
+													visibility: visible !important;
+												}
+											}
+
+											@include media-breakpoint-up(md) {
+												width: 420px;
+												float: left;
+											}
+										}
+										.manage {
+											text-align: center;
+											display: block;
+											color: inherit;
+											text-decoration: underline;
+											text-align: center;
+											display: block;
+											text-transform: uppercase;
+											opacity: 0.6;
+											font-size: 1.3rem;
+											padding:  0.5rem 1rem;
+											margin-top: 1.5rem;
+											font-family: $font-family-sans-serif;
+
+											@include media-breakpoint-up(md) {
+												float: right;
+											}
+										}
+									}
+
+									&.options {
+										flex: 0 0 100%;
+										max-width: 100%;
+										display: block;
+
+										@include media-breakpoint-up(md) {
+											flex: 0 0 100%;
+											max-width: 100%;
+										}
+									}
+
+									.gfield_label {
+										margin-top: 3rem;
+									}
+
+									.ginput_container_checkbox {
+										.gfield_checkbox {
+											li {
+												margin-top: 3rem;
+
+												@include media-breakpoint-up(sm) {
+													width: 80%;
+												}
+
+												@include media-breakpoint-up(md) {
+													width: 50%;
+												}
+
+												@include media-breakpoint-up(lg) {
+													width: 40%;
+												}
+
+												input[type="checkbox"] {
+													float: right;
+													margin-top: 2rem;
+												}
+
+												label {
+													font-size: 1.8rem;
+													font-family: $font-family-sans-serif;
+												}
+
+												&.gchoice_1_3_6 {
+													input[type="checkbox"] {
+														display: none;
+													}
+												}
+
+												&:last-child {
+													width: 100%;
+
+													input[type="checkbox"] {
+														float: left;
+														margin-top: 0.2rem;
+													}
+												}
+											}
+
+										}
+									}
+								}
+							}
+						}
+
+						.gform_footer {
+							margin-top: 0rem;
+
+							.btn-outline-primary {
+								margin-top: 2rem;
+								display: block;
+								width:  100%;
+								@include button-outline-variant($white, $light-black);
+								@include button-size($btn-padding-y, 1rem, 1.4rem, $btn-border-radius);
+
+								@include media-breakpoint-up(md) {
+									display: inline-block;
+									width: auto;
+								}
+							}
+						}
+					}
+				}
+
+				.form-control {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

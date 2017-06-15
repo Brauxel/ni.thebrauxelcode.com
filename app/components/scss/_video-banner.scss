@@ -1,0 +1,162 @@
+#video-banner-container {
+	background-image: url(components/images/banners/video-bg.jpg);
+	background-size: cover;
+	background-position: center center;
+	
+	&::before {
+		padding-top: 40px;
+		
+		@include media-breakpoint-up(xl) {
+			padding-top: 56.25%;
+			//position: relative;
+		}
+	}
+	
+	&::after {
+		@include media-breakpoint-up(xl) {
+			padding-bottom: 56.25%;
+			//position: relative;
+		}
+	}
+	
+	.overlay {
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+		display: block;
+		left: 0;
+		top: 0;
+		z-index: 1;
+	}
+	
+	.video-container {
+		@include media-breakpoint-up(lg) {
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			top: 0px;
+			left: 0px;
+			
+			&::after {
+				background-color: #333;
+				content: " ";
+				display: block;
+				height: 100%;
+				left: 0;
+				opacity: 0.3;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+		
+		.the-video {
+			display: none;
+			
+			@include media-breakpoint-up(lg) {
+				height: auto;
+				left: 0%;
+				min-height: 100%;
+				min-width: 100%;
+				top: 0%;
+				display: block;
+			}
+		}
+	}
+	
+	.banner-content {
+		position: relative;
+		z-index: 98;
+		color: #fff;
+		font-weight: normal;
+		font-size: 1.8rem;
+		height: 100%;
+		width: 100%;
+		
+		@include media-breakpoint-up(xl) {
+			position: absolute;
+			height: 100vh;
+			display: table;
+		}
+		
+		.inner {
+			p {
+				&.space-top {
+					margin-top: 20px;
+					margin-bottom: 20px;
+					
+					@include media-breakpoint-up(lg) {
+						margin-top: 80px;
+						margin-bottom: 55px;
+					}
+				}
+			}
+			
+			.logo {
+				display: block;				
+				
+				@include media-breakpoint-up(sm) {
+					width: 350px;
+				}
+				@include media-breakpoint-up(md) {
+					width: 450px;
+				}
+			}
+			
+			@include media-breakpoint-up(xl) {
+				margin: 0 auto;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			.tiles {
+				.tile {
+					position: relative;
+					margin-bottom: 20px;
+					
+					@include media-breakpoint-up(sm) {
+						padding-left: 3px;
+						padding-right: 3px;
+					}
+					
+					a {
+						display: block;
+						overflow: hidden;
+						
+						img {
+							width: 100%;
+							
+							&.tiled-logo {
+								transition: all 0.2s ease-out 0s;
+					
+								&:hover {
+									transform: scale(1.1);
+								}								
+							}
+						}
+						
+						&.title {
+							position: absolute;
+							z-index: 99;
+							bottom: 20px;
+							left: 0px;
+							right: 0px;
+							margin: 0 auto;
+							
+							@include media-breakpoint-up(sm) {
+								bottom: 10px;
+							}
+							
+							img {
+								width: 80%;
+								max-width: 80%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

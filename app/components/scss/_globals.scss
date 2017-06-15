@@ -1,0 +1,112 @@
+html {
+	font-size: $font-size-root; // Refer to _custom.scss
+		
+	body {
+		//font-size: 2rem;
+		//font-family: 'avenirregular', Helvetica Neue, Helvetica, Arial;
+		//font-family: $font-family-sans-serif;
+		
+		h2 {
+			//font-weight: normal;
+			//font-family: "Georgia",Times,Times New Roman,serif;
+		}
+
+		h3 {
+			text-transform: uppercase;
+			//font-family: "Georgia",Times,Times New Roman,serif;
+		}
+		
+		h4 {
+			text-transform: uppercase;
+			//font-weight: normal;
+			//font-family: "Georgia",Times,Times New Roman,serif;
+		}
+		
+		a, button {
+			transition: $transition-base;
+			cursor: pointer;
+			color: inherit;
+			
+			&.btn-outline-primary {
+				text-transform: uppercase;
+				opacity: $btn-primary-opacity;
+				font-family: $btn-primary-font-family;
+				@include button-outline-variant($white, #000);
+				@include button-size($btn-padding-y, $btn-padding-x, $btn-primary-font-size, $btn-border-radius);				
+				
+				&:active, &.active, &:hover {
+					opacity: 1;
+				}
+			}
+			
+			&.btn-secondary {
+				//@include button-variant($color, $background, $border);
+				font-family: $btn-secondary-font-family;
+				@include button-size($btn-padding-y, 1rem, $btn-secondary-font-size, 0.5rem);
+			}
+		}
+		
+		main {
+			.row {
+				@include media-breakpoint-up(sm) {
+					//margin-left: 0px;
+					//margin-right: 0px;
+				}
+			}
+		}
+		
+		.align-wrapper {
+			display: table;
+		}
+		
+		.social-icons {
+			list-style-type: none;			
+			padding-left: 0px;
+			width: 165px;
+			overflow: hidden;
+			
+			li {
+				padding-left: 5px;
+				padding-right: 5px;
+				float: left;
+				
+				a {
+					display: block;
+					width: 31px;
+					opacity: 0.6;
+					height: 31px;
+
+					&:hover {
+						opacity: 1;
+					}
+
+					svg {
+						height: 31px;
+						width: 100%;
+					}
+				}
+			}
+		}
+		
+		.raisebook-block {
+			background-image: url(components/images/blogs/raisebook-banner.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			font-size: 1.7rem;
+			color: $white;
+			
+			.btn-secondary {
+				@include button-size($btn-padding-y, $btn-padding-x, $font-size-blog-listing, $btn-border-radius);
+			}
+			
+			.align-wrapper {
+				height: 4rem;
+				
+				@include media-breakpoint-up(lg) {
+					height: 7rem;
+				}
+			}
+		}
+	}
+}

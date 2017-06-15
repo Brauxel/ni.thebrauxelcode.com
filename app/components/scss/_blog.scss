@@ -1,0 +1,34 @@
+.page-template-internal-home {
+	font-size: $font-size-blog-listing;
+	color: $blog-listing-text-color;
+	
+	.articles {
+		.blog-brief {
+			border-bottom: 1px solid #dcddde;
+
+			.synopsis {
+				.date {
+				    font-size: 1.2rem;
+					margin-bottom: 10px;
+				}
+
+				h2 {
+					font-size: 1.8rem;
+				}
+				
+		.btn {
+			font-family: $font-family-sans-serif;
+		}
+				
+			}
+		}
+		
+		.current-stocks {
+			font-size: 1.5rem;
+			
+			h3 {
+				text-align: left;
+			}
+		}
+	}
+}

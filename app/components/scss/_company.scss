@@ -1,0 +1,34 @@
+.tax-company {
+	.article-list {
+		font-size: 1.5rem;
+		
+		&.latest-article {
+			h4 {
+				min-height: auto;
+			}
+		}
+		
+		.image {
+			display: block;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+		.date {
+			color: #898b8e;
+			font-size: 1.2rem;
+		}
+
+		h4 {
+			text-transform: none;
+			min-height: 58px;
+		}
+
+		.btn-outline-primary {
+			@include button-size(0.2rem, 2rem, $font-size-blog-listing, $btn-border-radius);
+			@include button-outline-variant($black, $white);
+		}
+	}
+}

@@ -48,6 +48,13 @@ module.exports = {
     			}],
   			},
 			{
+				test: /\.(woff|woff2|eot|ttf)$/,
+				loader: 'url-loader',
+				options: {
+					limit: 100000
+				},
+			},
+			{
 				test: /\.css$/,
 	            use: ExtractTextPlugin.extract({
 	                use: [
