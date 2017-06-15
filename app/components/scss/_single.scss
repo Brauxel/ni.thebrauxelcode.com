@@ -2,6 +2,28 @@
 	article {
 		position: relative;
 		
+		h2 {
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+		}
+		
+		h3 {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+		
+		h4 {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		
+		img {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			max-width: 100%;
+			height: auto;
+		}
+		
 		.date {
 			font-size: 1.4rem;
 			color: #898B8E;
@@ -11,6 +33,7 @@
 				
 			}
 		}
+		
 		.text-size {
 			font-size: 1.1rem;
 			line-height: 2rem;

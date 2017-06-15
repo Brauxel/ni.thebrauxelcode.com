@@ -16,19 +16,39 @@
 					font-size: 1.8rem;
 				}
 				
-		.btn {
-			font-family: $font-family-sans-serif;
-		}
-				
+				.btn {
+					font-family: $font-family-sans-serif;
+					
+					&.btn-outline-primary {
+						@include button-size(0.2rem, 2rem, $btn-primary-font-size, $btn-border-radius);
+					}
+				}
 			}
-		}
+		}		
+	}
+	
+	.gform_wrapper {
+		margin: 2rem 0px;
+		display: block;
+		width: 100%;
+	}
+	
+	.current-stocks {
+		font-size: 1.4rem;
+		//line-height: 4.5rem;
 		
-		.current-stocks {
-			font-size: 1.5rem;
+		.logo {
+			display: block;
 			
-			h3 {
-				text-align: left;
+			@include media-breakpoint-up(md) {
+				&:hover {
+					color: #fff;
+				}
 			}
+		}
+
+		h3 {
+			text-align: left;
 		}
 	}
 }

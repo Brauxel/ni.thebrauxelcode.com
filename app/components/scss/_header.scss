@@ -2,21 +2,67 @@ header {
 	background: transparent;
 	opacity: 1;
 	font-size: 1.5rem;
-	z-index: $zindex-fixed;
-	width: 100%;
+	padding-bottom: 1.5rem;
+	padding-top: 1.5rem;
+	transition: all 0.2s ease-out 0s;
+	
+	&.scrolled {
+		padding-bottom: 1.5rem;
+		padding-top: 1.5rem;
+		
+		.nav-toggle {
+			background: rgba(41, 40, 42, 0.6);
+			padding-top: 2px;
+			padding-bottom: 2px;
+			border-radius: 0.25rem;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			background-color: $black;
+			opacity: 1;
+			border-bottom: 1px solid $light-black;
+			
+				a {
+					color: $white;
+
+					&:hover {
+						color: $white;
+					}
+				}
+			
+			
+			&.white {
+				background-color: $white;
+				
+				a {
+					color: $light-black;
+
+					&:hover {
+						color: $light-black;
+					}
+				}
+				
+				.form-control {
+					background-color: #f2f2f3;
+					color: #898b8e;
+				}
+			}
+			
+		}
+	}
 	
 	@include media-breakpoint-up(lg) {
 		background: $black;
-		opacity: 0.6;
+		opacity: 0.6;		
 	}
 	
-	.navbar-toggler {
+	/*.navbar-toggler {
 		display: block;
 			
 		@include media-breakpoint-up(lg) {
 			display: none;
 		}
-	}
+	}*/
 	
 	nav {
 		transition: all 0.2s ease-out 0s;
@@ -30,7 +76,7 @@ header {
 		height: 100vh;
 		overflow: scroll;
 		right: -280px;
-		padding: 0px;
+		padding: 8rem 0px 2rem 0px;
 		
 		&.show {
 			right: 0px;
@@ -44,26 +90,20 @@ header {
 			position: relative;
 			background-color: transparent;
 			overflow: hidden;
-		}
-		
-		.navbar-close {
-			background-color: transparent;
-			border: none;
-			color: #fff;
-			font-size: 3rem;
-			margin-top: 15px;
-			margin-bottom: 10px;
-			display: block;
-			
-			@include media-breakpoint-up(lg) {
-				display: none;
-			}
+			padding: 0px;
 		}
 		
 		ul {
 			list-style-type: none;
 			margin-bottom: 0px;
 			text-transform: uppercase;
+			margin-top: 3rem;
+			margin-bottom: 4rem;
+			
+			@include media-breakpoint-up(lg) {
+				margin-top: 0rem;
+				margin-bottom: 0rem;
+			}
 			
 			&.row {
 				padding-left: 0px;
@@ -85,13 +125,25 @@ header {
 					color: #fff;
 					display: block;
 					font-size: 1.3rem;
-					line-height: 4;
+					line-height: 3;
 					padding: 0 0px;
 					text-transform: uppercase;
+					font-weight: bolder;
+					
+					span {
+						color: #fff;
+						opacity: 0.6;
+						
+						@include media-breakpoint-up(lg) {
+							display: none;
+						}
+					}
 					
 					@include media-breakpoint-up(lg) {
-						line-height: 2.8;
+						line-height: 2;
 						font-size: 1.1rem;
+						padding-top: 5px;
+						font-weight: normal;
 					}
 					
 					@include media-breakpoint-up(xl) {
@@ -102,7 +154,6 @@ header {
 						color: #fff;
 						text-decoration: none;
 					}
-					
 				}
 				
 				&:first-child {
@@ -122,7 +173,9 @@ header {
 		a {
 			&.btn-outline-primary {
 				margin: 10px 15px 0px;
+				display: block;
 				@include button-size($btn-padding-y, 1rem, 0.9rem, $btn-border-radius);
+				
 				@include media-breakpoint-up(lg) {
 					display: none;
 				}
@@ -148,6 +201,21 @@ header {
 	.navbar-form {
 		display: none;
 		
+		.form-control {
+			opacity: 0.65;
+			background-color: $input-search-bg;
+			color: $input-search-color-placeholder;
+			border: 1px solid #fff;
+			
+			&::placeholder {
+				color: $input-search-color-placeholder;
+			}
+
+			@include media-breakpoint-up(lg) {
+				opacity: 1;
+			}
+		}
+		
 		@include media-breakpoint-up(lg) {
 			display: block;
 		}
@@ -161,4 +229,68 @@ header {
 			}
 		}
 	}
+	
+		.nav-toggle {
+			&::before, &::after {
+				content: " ";
+				position: absolute;
+				display: block;
+				background-color: #fff;
+				height: 1px;
+				margin-top: -1px;
+				left: 5px;
+				right: 5px;
+				z-index: 9;
+				transition: all 0.2s ease-out 0s;
+			}
+			&::before {
+				top: 25%;
+			}
+			
+			width: 40px;
+			height: 35px;
+			background-color: transparent;
+			position: relative;
+			display: block;
+			text-indent: -1000px;
+			overflow: hidden;
+			z-index: $zindex-tooltip;
+			outline: none;
+			
+			span {
+				background-color: #fff;
+				height: 1px;
+				margin-top: -1px;
+				top: 50%;
+				left: 5px;
+				right: 5px;
+				z-index: 10;
+				position: absolute;
+				display: block;
+			}
+			
+			&::after {
+				top: 75%;
+			}
+			
+			&.nav-close {
+				&::before, &::after {
+					top: inherit;
+				}
+				&::before {
+					transform: rotate(45deg);
+				}
+				
+				&::after {
+					transform: rotate(-45deg);
+				}
+				span {
+					display: none;
+				}
+			}
+			
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
 }

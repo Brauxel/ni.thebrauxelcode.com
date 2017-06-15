@@ -6,6 +6,10 @@ html {
 		//font-family: 'avenirregular', Helvetica Neue, Helvetica, Arial;
 		//font-family: $font-family-sans-serif;
 		
+		main {
+			padding-bottom: 4.5rem;
+		}
+		
 		h2 {
 			//font-weight: normal;
 			//font-family: "Georgia",Times,Times New Roman,serif;
@@ -18,14 +22,20 @@ html {
 		
 		h4 {
 			text-transform: uppercase;
+			margin-bottom: 3rem;
 			//font-weight: normal;
 			//font-family: "Georgia",Times,Times New Roman,serif;
+		}
+		
+		.hider {
+			display: none;
 		}
 		
 		a, button {
 			transition: $transition-base;
 			cursor: pointer;
 			color: inherit;
+			outline: none;
 			
 			&.btn-outline-primary {
 				text-transform: uppercase;
@@ -42,15 +52,13 @@ html {
 			&.btn-secondary {
 				//@include button-variant($color, $background, $border);
 				font-family: $btn-secondary-font-family;
-				@include button-size($btn-padding-y, 1rem, $btn-secondary-font-size, 0.5rem);
-			}
-		}
-		
-		main {
-			.row {
-				@include media-breakpoint-up(sm) {
-					//margin-left: 0px;
-					//margin-right: 0px;
+				
+				@include button-size($btn-padding-y, 2rem, $btn-secondary-font-size, $btn-border-radius);
+				//@include button-variant($white, $gray, $gray);
+				
+				&:hover {
+					color: $gray;
+					background-color: $white;
 				}
 			}
 		}
@@ -73,7 +81,7 @@ html {
 				a {
 					display: block;
 					width: 31px;
-					opacity: 0.6;
+					opacity: 0.5;
 					height: 31px;
 
 					&:hover {
@@ -83,6 +91,7 @@ html {
 					svg {
 						height: 31px;
 						width: 100%;
+						fill: $sidebar-secondary-btn-bg;
 					}
 				}
 			}
@@ -96,6 +105,16 @@ html {
 			font-size: 1.7rem;
 			color: $white;
 			
+			.img-fluid {
+				width: 300px;
+				max-width: 100%;
+				
+				@include media-breakpoint-up(lg) {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+			
 			.btn-secondary {
 				@include button-size($btn-padding-y, $btn-padding-x, $font-size-blog-listing, $btn-border-radius);
 			}
@@ -103,8 +122,17 @@ html {
 			.align-wrapper {
 				height: 4rem;
 				
+			
 				@include media-breakpoint-up(lg) {
-					height: 7rem;
+					&.link {
+						text-align: left;
+					}
+				}
+				
+				@include media-breakpoint-up(lg) {
+					height: 6.5rem;
+					padding-left: 0px;
+					padding-right: 3rem;
 				}
 			}
 		}

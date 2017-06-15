@@ -3,6 +3,22 @@ footer {
 	color: $white;
 	padding-bottom: 1.5rem;
 	font-size: 1.2rem;
+	
+	.latest-articles-current-site {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		h4 {
+			text-transform: none;
+			font-size: 1.8rem;
+		}
+		
+		.date {
+			color: #b2b4b6;
+		}
+	}
 		
 	ul {
 		font-size: 1.4rem;
@@ -20,6 +36,17 @@ footer {
 
 		&.social-icons {
 			padding-left: 0px;
+			
+			li {
+				&:first-child {
+					padding-left: 0px;
+				}
+				a {
+					svg {
+						fill: $white;
+					}
+				}
+			}
 		}
 	}
 

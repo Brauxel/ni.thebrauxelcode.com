@@ -1,35 +1,64 @@
 .sidebar {
 	color: $sidebar-text-color;
 	
-	.sidebar-form {
+	.gform_wrapper {
 		color: $white;
+		margin: 2rem -15px !important;
+		width: auto !important;
 		
-		@include media-breakpoint-up(lg) {
-			&.row {
-				margin-left: 0px;
-				margin-right: 0px;
-			}
-		}
-		
-		h5 {
-			text-transform: uppercase;
-			line-height: 1.5;
-		}
-		
-		label {
-			text-align: left;
-			line-height: 1;
-			margin-left: 5px;
-			font-size: 1.4rem;
-		}
-		
-		.btn-outline-primary {
-			font-weight: bold;
-			@include button-size(1.5rem, 4.5rem, $font-size-blog-listing, 0);
-			
+		form {
 			@include media-breakpoint-up(lg) {
-				width: 100%;
-				@include button-size(1.5rem, 0rem, $font-size-blog-listing, 0);
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+			
+			h3 {
+				text-transform: uppercase;
+				line-height: 1.1;
+				font-size: 1.5rem;
+				text-align: center;
+				margin-bottom: 0px;
+			}
+			
+			.gform_body {
+				.gform_fields {
+					.gfield {
+						@include media-breakpoint-up(lg) {
+							flex: 0 0 100%;
+							max-width: 100%;
+						}
+						
+						.ginput_container_checkbox {
+							@include media-breakpoint-up(lg) {
+								label {
+									width: 78%;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.gform_footer {
+				.btn-outline-primary {
+					font-weight: bold;
+					white-space: normal;
+					width: 170px;
+					text-align: center;
+					margin: 0 auto;
+					display: block;
+					@include button-size(1.5rem, 4.5rem, $font-size-blog-listing, 0);
+
+					@include media-breakpoint-up(lg) {
+						width: 100%;
+						@include button-size(1.5rem, 0rem, $font-size-blog-listing, 0);
+					}
+					
+					@include media-breakpoint-up(xl) {
+						width: 165px;
+						@include button-size(1.5rem, 1.3rem, $font-size-blog-listing, 0);
+					}
+				}
 			}
 		}
 	}
@@ -49,13 +78,13 @@
 	
 	.btn-secondary {
 		text-transform: uppercase;
-		@include button-variant($white, $sidebar-secondary-btn-bg, $sidebar-secondary-btn-bg);
+		//@include button-variant($white, $sidebar-secondary-btn-bg, $sidebar-secondary-btn-bg);
 		@include button-size($btn-padding-y, $btn-padding-x, $font-size-blog-listing, $btn-border-radius);
 		
 		@include media-breakpoint-up(lg) {
 			width: 100%;
 			white-space: normal;
-			@include button-size($btn-padding-y, 0rem, 1rem, $btn-border-radius);
+			@include button-size($btn-padding-y, 0.5rem, 1rem, $btn-border-radius);
 		}
 		@include media-breakpoint-up(xl) {
 			@include button-size($btn-padding-y, 0rem, $font-size-blog-listing, $btn-border-radius);
@@ -75,6 +104,16 @@
 	
 	.company-logo {
 		font-size: 1.6rem;
+		transition: all 0.4s ease-out 0s;
+		cursor: pointer;
+		
+		.image {
+			display: block;
+		}
+		
+		&:hover {
+			background-color: rgba(230,230,231,0.5);
+		}
 	}
 	
 	.social-icons {

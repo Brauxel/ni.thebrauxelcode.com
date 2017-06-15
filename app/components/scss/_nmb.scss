@@ -13,6 +13,14 @@
 		}
 	}
 	
+	&.tax-company {
+		.article-list {
+			.btn-outline-primary {
+				@include button-outline-variant($nmb-brand-color, #fff);
+			}
+		}
+	}
+	
 	.page-link {
 		//background-color: $nmb-brand-color;
 		border: none;
@@ -23,11 +31,25 @@
 		}
 	}
 	
-	.sidebar-form {
-		background-color: $nmb-brand-color;
-		
-		.btn-outline-primary {
-			@include button-outline-variant($white, $nmb-brand-color);
+	.gform_wrapper {
+		form {
+			background-color: $nmb-brand-color;
+			
+			.gform_footer {
+				.btn-outline-primary {
+					@include button-outline-variant($white, $nmb-brand-color);
+				}
+			}
+		}
+	}
+	
+	.current-stocks {
+		.logo {
+			@include media-breakpoint-up(md) {
+				&:hover {
+					background-color: $nmb-brand-color;
+				}
+			}
 		}
 	}
 }
@@ -57,11 +79,15 @@
 		}
 	}
 	
-	.sidebar-form {
-		background-color: $nor-brand-color;
-		
-		.btn-outline-primary {
-			@include button-outline-variant($white, $nor-brand-color);
+	.gform_wrapper {
+		form {
+			background-color: $nor-brand-color;
+			
+			.gform_footer {
+				.btn-outline-primary {
+					@include button-outline-variant($white, $nor-brand-color);
+				}
+			}
 		}
 	}
 }
@@ -91,11 +117,15 @@
 		}
 	}
 	
-	.sidebar-form {
-		background-color: $nsc-brand-color;
-		
-		.btn-outline-primary {
-			@include button-outline-variant($white, $nsc-brand-color);
+	.gform_wrapper {
+		form {
+			background-color: $nsc-brand-color;
+			
+			.gform_footer {
+				.btn-outline-primary {
+					@include button-outline-variant($white, $nsc-brand-color);
+				}
+			}
 		}
 	}
 }
@@ -125,11 +155,15 @@
 		}
 	}
 	
-	.sidebar-form {
-		background-color: $nts-brand-color;
-		
-		.btn-outline-primary {
-			@include button-outline-variant($white, $nts-brand-color);
+	.gform_wrapper {
+		form {
+			background-color: $nts-brand-color;
+			
+			.gform_footer {
+				.btn-outline-primary {
+					@include button-outline-variant($white, $nts-brand-color);
+				}
+			}
 		}
 	}
 }
@@ -159,11 +193,15 @@
 		}
 	}
 	
-	.sidebar-form {
-		background-color: $nbt-brand-color;
-		
-		.btn-outline-primary {
-			@include button-outline-variant($white, $nbt-brand-color);
+	.gform_wrapper {
+		form {
+			background-color: $nbt-brand-color;
+			
+			.gform_footer {
+				.btn-outline-primary {
+					@include button-outline-variant($white, $nbt-brand-color);
+				}
+			}
 		}
 	}
 }

@@ -13,8 +13,8 @@
 		}
 		
 		@include media-breakpoint-up(lg) {
-			height: 270px;
-			padding-top: 90px;
+			height: 350px;
+			padding-top: 65px;
 		}
 		
 		.img-fluid {
@@ -22,6 +22,36 @@
 			
 			@include media-breakpoint-up(xl) {
 				width: 70%;
+			}
+		}
+		
+		.gform_wrapper {
+			margin: 0px -15px;
+			
+			form {
+				background-color: transparent;
+				padding: 0px;
+				
+				.gform_heading {
+					font-size: 1.2rem;
+					
+				}
+				
+				.gform_body {
+					.gform_fields {
+						.gfield {
+							.ginput_container_checkbox {
+								label {
+									font-size: 1.2rem;
+								}
+							}
+						}
+					}
+					
+				}
+				
+				.gform_footer {
+				}
 			}
 		}
 		

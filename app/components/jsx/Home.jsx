@@ -13,7 +13,7 @@ var Home = React.createClass({
   	render: function() {
     	return (
         <main>
-          <h1>HOme</h1>
+          <h1>Home</h1>
           <VideoBanner />
         </main>
     	)
