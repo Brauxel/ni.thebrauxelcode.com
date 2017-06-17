@@ -2,21 +2,13 @@ import React from 'react';
 import Header from './Header.jsx';
 import Home from './Home.jsx';
 
-module.exports = React.createClass({
-  render: function() {
+export default class Skeleton extends React.Component {
+  render() {
     return (
-        <Skeleton />
-    )
+        <div>
+          <Header />
+          <Home />
+        </div>
+    );
   }
-});
-
-var Skeleton = React.createClass({
-  	render: function() {
-    	return (
-          <div>
-            <Header />
-            <Home />
-          </div>
-    	)
-  	}
-});
+}

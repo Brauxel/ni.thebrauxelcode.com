@@ -1,21 +1,19 @@
 import React from 'react';
 import VideoBanner from './VideoBanner.jsx'
 
-module.exports = React.createClass({
-  render: function() {
+/*
+  Renders the Home Page content
+  @extends React.Component
+  @function render()
+  @return HTML
+  @export default
+*/
+export default class Home extends React.Component {
+  render() {
     return (
-        <Home />
-    )
+      <main>
+        <VideoBanner />
+      </main>
+    );
   }
-});
-
-var Home = React.createClass({
-  	render: function() {
-    	return (
-        <main>
-          <h1>Home</h1>
-          <VideoBanner />
-        </main>
-    	)
-  	}
-});
+}
