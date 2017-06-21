@@ -1,22 +1,25 @@
-.blog-9 {
+/*
+	* Next Biotech Custom Styles
+*/
+.blog-15 {
 	.jumbotron {
-			background-image: url(components/images/banners/nmb.jpg);
+			background-image: url(components/images/banners/nbt.jpg);
 		
 		.btn-outline-primary {
-			@include button-outline-variant($white, $nmb-brand-color);
+			@include button-outline-variant($white, $nbt-brand-color);
 		}
 	}
 	
 	.articles {
 		.btn-outline-primary {
-			@include button-outline-variant($nmb-brand-color, #fff);
+			@include button-outline-variant($nbt-brand-color, #fff);
 		}
 	}
 	
 	&.tax-company {
 		.article-list {
 			.btn-outline-primary {
-				@include button-outline-variant($nmb-brand-color, #fff);
+				@include button-outline-variant($nbt-brand-color, #fff);
 			}
 		}
 	}
@@ -27,24 +30,24 @@
 		
 		.page {
 			&:hover, &:active, &.active {
-				background-color: $nmb-brand-color;
-				border-color: $nmb-brand-color;
+				background-color: $nbt-brand-color;
+				border-color: $nbt-brand-color;
 			}
 		}
 		
 		.current {
-			background-color: $nmb-brand-color;
-			border-color: $nmb-brand-color;
+			background-color: $nbt-brand-color;
+			border-color: $nbt-brand-color;
 		}
 	}
 	
 	.gform_wrapper {
 		form {
-			background-color: $nmb-brand-color;
+			background-color: $nbt-brand-color;
 			
 			.gform_footer {
 				.btn-outline-primary {
-					@include button-outline-variant($white, $nmb-brand-color);
+					@include button-outline-variant($white, $nbt-brand-color);
 				}
 			}
 		}
@@ -54,7 +57,7 @@
 		.logo {
 			@include media-breakpoint-up(md) {
 				&:hover {
-					background-color: $nmb-brand-color;
+					background-color: $nbt-brand-color;
 				}
 			}
 		}

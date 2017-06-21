@@ -2,6 +2,16 @@
 	position: relative;
 	overflow: hidden;
 	
+	.overlay {
+		display: block;
+		z-index: 1;
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(bottom, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(bottom, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* Standard syntax (must be last) */
+		position: absolute;
+	}
+	
 	@include media-breakpoint-up(lg) {
 		height: 820px;
 	}
@@ -15,21 +25,6 @@
 			display: block;
 			height: 1px;
 		}
-	}
-	
-	.overlay {
-		//background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(bottom, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(bottom, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,1)); /* Standard syntax (must be last) */
-		display: block;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		z-index: 1;
 	}
 	
 	.video-container {
@@ -119,6 +114,12 @@
 					a {
 						display: block;
 						overflow: hidden;
+						width: 90%;
+						margin: 0 auto;
+						
+						@include media-breakpoint-up(sm) {
+							width: 100%;
+						}
 						
 						img {
 							width: 100%;
@@ -145,8 +146,29 @@
 							}
 							
 							img {
-								width: 80%;
-								max-width: 80%;
+								width: 75%;
+								max-width: 75%;
+								
+								@include media-breakpoint-up(sm) {
+									margin-left: 10px;
+								}
+							}
+						}
+					}
+					
+					.nmb-title {
+						.img-fluid {
+							@include media-breakpoint-up(md) {
+								margin-left: 10px;
+							}
+						}
+					}
+					@include media-breakpoint-up(sm) {
+						&:last-child {
+							.title {
+								img {
+									margin-left: 0px;
+								}
 							}
 						}
 					}

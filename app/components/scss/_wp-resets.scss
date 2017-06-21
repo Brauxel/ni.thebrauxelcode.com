@@ -1,0 +1,17 @@
+body {
+	.wp-pagenavi {
+		display: block;
+		text-align: center;
+		margin-top: 3rem;
+		
+		.page {
+			&:hover {
+				color: $white;
+			}
+		}
+		
+		.current {
+			color: $white;
+		}
+	}
+}

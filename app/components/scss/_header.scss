@@ -6,15 +6,68 @@ header {
 	padding-top: 1.5rem;
 	transition: all 0.2s ease-out 0s;
 	
+	.logo {
+		a {
+			width: 40px;
+			height: 40px;
+			display: none;
+			
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+			
+			svg {
+				fill: #fff;
+				transition: $transition-base;
+			}
+			
+			&:hover {
+				svg {
+					opacity: 0.8;
+				}
+			}
+		}
+		
+		&.logo-res {
+			position: absolute;
+			top:15px;
+			left: 15px;
+			
+			a {
+				display: block;
+				
+				svg {
+					fill: #fff !important;
+				}
+			
+				&:hover {
+					svg {
+						opacity: 1;
+					}
+				}
+			}
+			
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+		}
+	}
+		
 	&.scrolled {
 		padding-bottom: 1.5rem;
 		padding-top: 1.5rem;
 		
-		.nav-toggle {
-			background: rgba(41, 40, 42, 0.6);
-			padding-top: 2px;
-			padding-bottom: 2px;
-			border-radius: 0.25rem;
+		.toggler {
+			.nav-toggle {
+				background: rgba(41, 40, 42, 0.6);
+				padding-top: 2px;
+				padding-bottom: 2px;
+				border-radius: 0.25rem;
+				
+				&:hover {
+					background: rgba(41, 40, 42, 0.8);
+				}
+			}
 		}
 		
 		@include media-breakpoint-up(lg) {
@@ -29,11 +82,24 @@ header {
 						color: $white;
 					}
 				}
+		}
 			
 			
-			&.white {
+		&.white {
+			.logo {				
+				a {
+					display: block;
+					
+					svg {
+						fill: #29282a;
+						opacity: 0.6;
+					}
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
 				background-color: $white;
-				
+
 				a {
 					color: $light-black;
 
@@ -41,14 +107,19 @@ header {
 						color: $light-black;
 					}
 				}
-				
+
 				.form-control {
 					background-color: #f2f2f3;
 					color: #898b8e;
+
+					&::-webkit-input-placeholder { color: #898b8e; }
+					&::-moz-placeholder { color: #898b8e; }
+					&::-ms-input-placeholder { color: #898b8e; }
+
 				}
 			}
-			
 		}
+			
 	}
 	
 	@include media-breakpoint-up(lg) {
@@ -76,7 +147,7 @@ header {
 		height: 100vh;
 		overflow: scroll;
 		right: -280px;
-		padding: 8rem 0px 2rem 0px;
+		padding: 6rem 0px;
 		
 		&.show {
 			right: 0px;
@@ -91,13 +162,22 @@ header {
 			background-color: transparent;
 			overflow: hidden;
 			padding: 0px;
+			
+			&.align-wrapper {
+				display: block;
+				
+				.align-middle {
+					display: block;
+				}
+			}
+			
 		}
 		
 		ul {
 			list-style-type: none;
 			margin-bottom: 0px;
 			text-transform: uppercase;
-			margin-top: 3rem;
+			margin-top: 4rem;
 			margin-bottom: 4rem;
 			
 			@include media-breakpoint-up(lg) {
@@ -125,7 +205,7 @@ header {
 					color: #fff;
 					display: block;
 					font-size: 1.3rem;
-					line-height: 3;
+					line-height: 3.5;
 					padding: 0 0px;
 					text-transform: uppercase;
 					font-weight: bolder;
@@ -133,16 +213,15 @@ header {
 					span {
 						color: #fff;
 						opacity: 0.6;
-						
+												
 						@include media-breakpoint-up(lg) {
 							display: none;
 						}
 					}
 					
 					@include media-breakpoint-up(lg) {
-						line-height: 2;
+						line-height: 4rem;
 						font-size: 1.1rem;
-						padding-top: 5px;
 						font-weight: normal;
 					}
 					
@@ -163,6 +242,12 @@ header {
 				}
 				
 				&:last-child {
+					a {
+						span {
+							display: none;
+						}
+					}
+					
 					@include media-breakpoint-up(lg) {
 						padding-right: 0px;
 					}
@@ -174,7 +259,9 @@ header {
 			&.btn-outline-primary {
 				margin: 10px 15px 0px;
 				display: block;
-				@include button-size($btn-padding-y, 1rem, 0.9rem, $btn-border-radius);
+				opacity: 1;
+				
+				@include button-size($btn-padding-y, 1rem, 1.2rem, $btn-border-radius);
 				
 				@include media-breakpoint-up(lg) {
 					display: none;
@@ -200,12 +287,19 @@ header {
 	
 	.navbar-form {
 		display: none;
+		position: relative;
 		
 		.form-control {
 			opacity: 0.65;
 			background-color: $input-search-bg;
 			color: $input-search-color-placeholder;
 			border: 1px solid #fff;
+			border-radius: 0px;
+						
+			&:focus {
+				background-color: $white !important;
+				color: #898b8e !important;
+			}
 			
 			&::placeholder {
 				color: $input-search-color-placeholder;
@@ -216,20 +310,66 @@ header {
 			}
 		}
 		
-		@include media-breakpoint-up(lg) {
+		.search-icon {
+			background-color: transparent;
+			background-image: url(components/images/search-icon.png);
+			background-repeat: no-repeat;
 			display: block;
+			width: 20px;
+			height: 20px;
+			border: none;
+			text-indent: -1000px;
+			overflow: hidden;
+			position: absolute;
+			top: 8px;
+			right: 5px;
+			
+			svg {
+				path {
+					fill: #000;
+				}
+			}
 		}
 		
-		&.navbar-res {
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}		
+	}
+	
+	.navbar-res {
+		.navbar-form {
 			display: block;
 			padding: 0px 15px;
 			
+			.search-icon {
+				right: 15px;
+			}
+			
+			.form-control {
+				background-color: #333333;
+			}
+
 			@include media-breakpoint-up(lg) {
 				display: none;
 			}
 		}
 	}
 	
+	.toggler {
+		position: fixed;
+		right: 0px;
+		top: 16px;
+		width: auto;
+		z-index: $zindex-tooltip;
+		
+		@include media-breakpoint-up(lg) {
+			position: relative;
+			right: 0px;
+			top: auto;
+			z-index: 1;
+		}
+		
+		
 		.nav-toggle {
 			&::before, &::after {
 				content: " ";
@@ -254,7 +394,6 @@ header {
 			display: block;
 			text-indent: -1000px;
 			overflow: hidden;
-			z-index: $zindex-tooltip;
 			outline: none;
 			
 			span {
@@ -293,4 +432,5 @@ header {
 				display: none;
 			}
 		}
+	}
 }

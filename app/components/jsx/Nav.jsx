@@ -12,7 +12,9 @@ export default class Nav extends React.Component {
   render() {
     return (
         <nav>
-          <SearchForm />
+          <div className="navbar-res">
+            <SearchForm />
+          </div>
             
           <ul className="main-menu row text-left">
             <li className="col-lg-2"><a href="http://staging.nextminingboom.com/"><span>Next </span>Mining Boom</a></li>

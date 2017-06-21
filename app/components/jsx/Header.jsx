@@ -1,6 +1,7 @@
 import React from 'react';
 //import Logo from './Logo.jsx';
 import Nav from './Nav.jsx';
+import SearchForm from './SearchForm.jsx';
 
 export default class Header extends React.Component {
     /*
@@ -30,12 +31,12 @@ export default class Header extends React.Component {
                             <Nav />
                         </div>
 
-                        <div className="col-sm-3">
+                        <div className="col-sm-3 toggler">
                             <button className="nav-toggle float-right border-0" type="button" data-toggle="collapse" data-target="#navbarsExampleCenteredNav" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation"><span aria-label="Mobile Menu Icon"></span></button>
                             
-                            <form className="navbar-form navbar-right" action="#">
-                                <input className="form-control" type="text" name="search" placeholder="Search..." />
-                            </form>
+                            <div className="navbar-right">
+                                <SearchForm />
+                            </div>
                         </div>
                     </div>
                 </div>

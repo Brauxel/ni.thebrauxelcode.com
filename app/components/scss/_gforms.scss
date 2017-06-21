@@ -56,6 +56,10 @@
 					flex: 0 0 100%;
 					max-width: 100%;
 					
+					&.gform_hidden {
+						display: none;
+					}
+					
 					@include media-breakpoint-up(md) {
 						flex: 0 0 50%;
 						max-width: 50%;
@@ -71,7 +75,7 @@
 						display: block;
 						font-size: 1.4rem;
 						line-height: 1.25;
-						padding: 0.6rem 1.2rem;
+						padding: 0.6rem 1.2rem !important;
 						transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 						width: 100%;
 						margin-bottom: 1rem;
@@ -106,7 +110,7 @@
 
 								label {
 									font-size: 1.4rem;
-									line-height: 1;
+									line-height: 1.2;
 									float: left;
 									width: 90%;
 									padding-left: 4%;
@@ -133,6 +137,10 @@
 			
 			.btn-outline-primary {
 				@include button-size($btn-padding-y, 3rem, $font-size-blog-listing, $btn-border-radius);
+				
+				&:hover {
+					color: $white !important;
+				}
 			}
 		}
 	}

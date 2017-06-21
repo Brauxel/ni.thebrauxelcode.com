@@ -1,5 +1,10 @@
 html {
 	font-size: $font-size-root; // Refer to _custom.scss
+	
+	&.no-scroll {
+		overflow:hidden;
+		height:100%;
+	}
 		
 	body {
 		//font-size: 2rem;
@@ -46,6 +51,12 @@ html {
 				
 				&:active, &.active, &:hover {
 					opacity: 1;
+				}
+				
+				&.disabled, &:disabled {
+					&:hover {
+						opacity: $btn-primary-opacity;
+					}
 				}
 			}
 			
@@ -135,6 +146,65 @@ html {
 					padding-right: 3rem;
 				}
 			}
+		}
+		.text-size {
+			font-size: 1.1rem;
+			line-height: 2rem;
+			//margin-bottom: 3rem;
+			
+			.control {
+  				width: 20px;
+  				height: 20px;
+  				background-color: #86888A;
+  				position: relative;
+				display: block;
+				text-indent: -1000px;
+				overflow: hidden;
+				
+				&::after {
+					content: " ";
+  					position: absolute;
+				  	display: block;
+				  	background-color: #fff;
+				  	height: 2px;
+				  	margin-top: -1px;
+				  	top: 50%;
+				  	left: 5px;
+				  	right: 5px;
+				  	z-index: 9;
+				}
+				
+				&:before {
+					content: " ";
+					position: absolute;
+					display: block;
+					background-color: #fff;
+					width: 2px;
+					margin-left: -1px;
+					left: 50%;
+					top: 5px;
+					bottom: 5px;
+					z-index: 9;
+				}
+				
+				&.minus {
+					&:before {
+						content: none;
+					}
+				}
+			}
+		}
+		
+		.overlay {
+			background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+			display: block;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+			display: none;
 		}
 	}
 }

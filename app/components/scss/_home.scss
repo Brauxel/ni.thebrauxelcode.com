@@ -1,6 +1,10 @@
 .page-template-landing {
-	@include media-breakpoint-up(lg) {
-		header {
+	header {
+		.logo {
+			display: none;
+		}
+		
+		@include media-breakpoint-up(lg) {
 			&.scrolled, &.white {
 				background-color: #000;
 				border-bottom: none;
@@ -12,13 +16,17 @@
 						color: #fff;
 					}
 				}
-				
+
 				.form-control {
 					background-color: transparent;
 					color: #fff;
 				}
 			}
 		}
+	}
+
+	main {
+		padding-bottom: 0px;
 	}
 	
 	.banner-content {
@@ -70,6 +78,11 @@
 						
 						.gform_description {
 							margin-bottom: 2rem;
+							font-size: 1.4rem;
+							
+							@include media-breakpoint-up(md) {
+								font-size: 1.8rem;
+							}
 						}
 					}
 					
@@ -245,22 +258,22 @@
 			padding-bottom: 190px;
 		}
 		
-		&.nmb-panel {
+		&#nmb-panel {
 			background-image:url(components/images/banners/nmb_panel.jpg);
 		}
-		&.nor-panel {
+		&#nor-panel {
 			background-image:url(components/images/banners/oil-panel.jpg);
 		}
-		&.nts-panel {
+		&#nts-panel {
 			background-image:url(components/images/banners/techstock-panel.jpg);
 		}
-		&.nsc-panel {
+		&#nsc-panel {
 			background-image:url(components/images/banners/smallcap-panel.jpg);
 		}
-		&.nbt-panel {
+		&#nbt-panel {
 			background-image:url(components/images/banners/nbt-panel.jpg);
 		}
-		&.raisebook-panel {
+		&#raisebook-panel {
 			background-image:url(components/images/banners/raisebook-panel.jpg);
 			text-align: center;
 		}
