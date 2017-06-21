@@ -10,7 +10,7 @@ export default class VideoBanner extends React.Component {
           <div className="overlay">&nbsp;</div>
 
           <div id="video-banner" className="video-container">
-            <video loop muted autoplay className="the-video" preload="auto">
+            <video loop muted autoPlay className="the-video" preload="auto">
               <source src="https://s3-ap-southeast-2.amazonaws.com/sdnewsdesk/nextinvestors.mp4" type="video/mp4" />
             </video>
           </div>
