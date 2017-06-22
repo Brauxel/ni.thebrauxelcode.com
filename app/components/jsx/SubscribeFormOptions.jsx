@@ -1,5 +1,12 @@
 import React from 'react';
 
+/*
+  Renders a subscription with options
+  @extends React.Component
+  @function render()
+  @return HTML
+  @export default
+*/
 export default class SubscribeFormOptions extends React.Component {
 	constructor(props) {
 		super(props);

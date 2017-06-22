@@ -1,5 +1,5 @@
 /* 
-  We import our the tiles and title images here
+  We import our images here
 */
 
 export default function importAll(r) {

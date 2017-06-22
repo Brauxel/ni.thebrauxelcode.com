@@ -1,7 +1,5 @@
 import React from 'react';
-//var bgImg = "style='background-image: url(" + {this.props.banner} + ");'";
 
-//alert(bgImg);
 export default class LatestArticlePanel extends React.Component {
 	render() {
 		return(

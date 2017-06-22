@@ -1,5 +1,12 @@
 import React from 'react';
 
+/*
+  Renders the Subscription Form
+  @extends React.Component
+  @function render()
+  @return HTML
+  @export default
+*/
 export default class SubscribeFormOptionLess extends React.Component {
 	render() {
 		return(
