@@ -33,7 +33,7 @@ export default class SubscribeFormOptions extends React.Component {
  	handleSubmit(event) {
     	//alert('A name was submitted: ' + this.state.email);
 
-    	var xmlhttp = new XMLHttpRequest();
+    	let xmlhttp = new XMLHttpRequest();
 		/*xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
