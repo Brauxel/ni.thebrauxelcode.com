@@ -1,17 +1,17 @@
 import React from 'react';
-import VideoBanner from './VideoBanner.jsx'
-import SubscribeFormOptions from './SubscribeFormOptions.jsx'
-import LatestArticlePanel from './LatestArticlePanel.jsx';
-import DarkSubSitePanel from './DarkSubSitePanel.jsx';
-import ImageScanner from './ImageScanner.jsx';
+import VideoBanner from './../home/VideoBanner.jsx'
+import SubscribeFormOptions from './../subscribe-forms/SubscribeFormOptions.jsx'
+import LatestArticlePanel from './../home/LatestArticlePanel.jsx';
+import DarkSubSitePanel from './../home/DarkSubSitePanel.jsx';
+import ImageScanner from './../helpers/ImageScanner.jsx';
 
 // This function automates the import of images
 // @param folder_path
 // @param keep_paths
 // @param extensions_to_scan
 // @return array['image_name' => image_path]
-const logos = ImageScanner(require.context('../images/logos', false, /\.(png|jpe?g|svg)$/));
-const banners = ImageScanner(require.context('../images/banners', false, /\.(png|jpe?g|svg)$/));
+const logos = ImageScanner(require.context('../../images/logos', false, /\.(png|jpe?g|svg)$/));
+const banners = ImageScanner(require.context('../../images/banners', false, /\.(png|jpe?g|svg)$/));
 
 /*
   Renders the Home Page content

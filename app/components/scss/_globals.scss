@@ -12,7 +12,7 @@ html {
 		//font-family: $font-family-sans-serif;
 		
 		main {
-			padding-bottom: 4.5rem;
+			padding-bottom: 2rem;
 		}
 		
 		h2 {
@@ -150,6 +150,7 @@ html {
 		.text-size {
 			font-size: 1.1rem;
 			line-height: 2rem;
+			text-transform: uppercase;
 			//margin-bottom: 3rem;
 			
 			.control {
@@ -205,6 +206,27 @@ html {
 			width: 100%;
 			z-index: 999;
 			display: none;
+		}
+		
+		.search-icon {
+			background-color: transparent;
+			background-image: url(components/images/search-icon.png);
+			background-repeat: no-repeat;
+			display: block;
+			width: 20px;
+			height: 20px;
+			border: none;
+			text-indent: -1000px;
+			overflow: hidden;
+			position: absolute;
+			top: 8px;
+			right: 5px;
+			
+			svg {
+				path {
+					fill: #000;
+				}
+			}
 		}
 	}
 }

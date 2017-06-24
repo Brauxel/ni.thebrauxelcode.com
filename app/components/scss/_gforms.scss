@@ -84,6 +84,7 @@
 					&.options {
 						flex: 0 0 100%;
 						max-width: 100%;
+						margin-top: 1rem;
 					}
 					
 					.gfield_label {
@@ -139,7 +140,7 @@
 				@include button-size($btn-padding-y, 3rem, $font-size-blog-listing, $btn-border-radius);
 				
 				&:hover {
-					color: $white !important;
+					color: $white;
 				}
 			}
 		}

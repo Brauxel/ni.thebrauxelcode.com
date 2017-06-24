@@ -24,10 +24,6 @@
 			}
 		}
 	}
-
-	main {
-		padding-bottom: 0px;
-	}
 	
 	.banner-content {
 		text-align: center;
@@ -42,8 +38,8 @@
 		background-color: $light-black;
 		font-size: 1.6rem;
 		color: $white;
-		padding-top: 5rem;
-		padding-bottom: 4rem;
+		padding-top: 7rem;
+		padding-bottom: 7rem;
 		
 		@include media-breakpoint-up(lg) {
 			padding-top: 65px;
@@ -71,6 +67,12 @@
 					padding: 0px;
 					
 					.gform_heading {
+						text-align: center;
+						
+						@include media-breakpoint-up(md) {
+							text-align: left;
+						}
+						
 						h3 {
 							margin-top: 0px;
 							margin-bottom: 0rem;
@@ -232,9 +234,22 @@
 	.panel {
 		background-position: center center;
 		background-size: cover;
-		padding-top: 50px;
-		padding-bottom: 80px;
+		padding-top: 65px;
+		padding-bottom: 65px;
 		color: $white;
+		position: relative;
+		
+		.overlay {
+			position: absolute;
+			display: block;
+			background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+			z-index: 1;
+		}
+		
+		.container {
+			position: relative;
+			z-index: 2;
+		}
 		
 		h3 {
 			font-family: $font-family-sans-serif;
@@ -258,22 +273,23 @@
 			padding-bottom: 190px;
 		}
 		
-		&#nmb-panel {
+		&.nmb-panel {
 			background-image:url(components/images/banners/nmb_panel.jpg);
 		}
-		&#nor-panel {
+		&.nor-panel {
 			background-image:url(components/images/banners/oil-panel.jpg);
 		}
-		&#nts-panel {
+		&.nts-panel {
 			background-image:url(components/images/banners/techstock-panel.jpg);
+			position: relative;
 		}
-		&#nsc-panel {
+		&.nsc-panel {
 			background-image:url(components/images/banners/smallcap-panel.jpg);
 		}
-		&#nbt-panel {
+		&.nbt-panel {
 			background-image:url(components/images/banners/nbt-panel.jpg);
 		}
-		&#raisebook-panel {
+		&.raisebook-panel {
 			background-image:url(components/images/banners/raisebook-panel.jpg);
 			text-align: center;
 		}

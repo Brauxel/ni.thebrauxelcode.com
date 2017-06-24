@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header.jsx';
-import Home from './Home.jsx';
-import Footer from './Footer.jsx';
-import PostListing from './PostListing.jsx';
-import ImageScanner from './ImageScanner.jsx';
+import Header from './globals/Header.jsx';
+import Home from './home/Home.jsx';
+import Footer from './globals/Footer.jsx';
+import PostListing from './posts/PostListing.jsx';
+import ImageScanner from './helpers/ImageScanner.jsx';
 
 // This function automates the import of images
 // @param folder_path

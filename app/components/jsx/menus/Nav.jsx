@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchForm from './SearchForm.jsx';
+import SearchForm from './../search/SearchForm.jsx';
 
 /*
   Renders the Nav Bar

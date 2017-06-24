@@ -1,7 +1,7 @@
 import React from 'react';
 //import Logo from './Logo.jsx';
-import Nav from './Nav.jsx';
-import SearchForm from './SearchForm.jsx';
+import Nav from './../menus/Nav.jsx';
+import SearchForm from './../search/SearchForm.jsx';
 
 export default class Header extends React.Component {
     /*

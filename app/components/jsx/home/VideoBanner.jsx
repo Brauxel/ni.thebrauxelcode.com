@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageScanner from './ImageScanner.jsx';
+import ImageScanner from './../helpers/ImageScanner.jsx';
 
 
 // This function automates the import of images
@@ -7,7 +7,7 @@ import ImageScanner from './ImageScanner.jsx';
 // @param keep_paths
 // @param extensions_to_scan
 // @return array['image_name' => image_path]
-const tiles = ImageScanner(require.context('../images/tiles', false, /\.(png|jpe?g|svg)$/));
+const tiles = ImageScanner(require.context('../../images/tiles', false, /\.(png|jpe?g|svg)$/));
 
 /*
   Renders the Video Banner

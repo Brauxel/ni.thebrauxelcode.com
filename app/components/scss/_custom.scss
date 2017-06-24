@@ -21,6 +21,7 @@ $container-max-widths: (
 // Start with assigning color names to specific hex values.
 $gray: #525252;
 $light-black: #29282a;
+$ni-brand-color: #29282a;
 $nmb-brand-color: #cbb55b;
 $nor-brand-color: #6B728B;
 $nsc-brand-color: #4A8897;
@@ -38,6 +39,7 @@ $font-family-base: $font-family-sans-serif;
 $font-family-serif: "Georgia",Times,Times New Roman,serif;
 $btn-primary-font-family: "Helvetica Neue", Helvetica, Arial, Gotham, "sans-serif";
 $btn-secondary-font-family: "Verdana", "sans-serif";
+$line-height-base: 1.3;
 
 $font-size-root: 10px; // This sets the root size for our website, all subsequent font-sizes are relative to this
 $font-size-base: 2rem;

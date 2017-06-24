@@ -1,6 +1,6 @@
 import React from 'react';
-import SubscribeFormOptionLess from './SubscribeFormOptionLess.jsx';
-import SecondaryMenu from './SecondaryMenu.jsx';
+import SubscribeFormOptionLess from './../subscribe-forms/SubscribeFormOptionLess.jsx';
+import SecondaryMenu from './../menus/SecondaryMenu.jsx';
 
 export default class Footer extends React.Component {
 	render() {

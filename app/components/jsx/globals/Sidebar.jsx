@@ -1,4 +1,5 @@
 import React from 'react';
+import RaisebookLogo from './../../images/logos/raisebook.svg';
 
 export default class Sidebar extends React.Component {
 	render() {
@@ -30,7 +31,7 @@ export default class Sidebar extends React.Component {
 					<div className="col-lg-12">							
 						<div className="text-center pt-5 pb-5">
 							<div className="col-lg-12">
-								<a href="https://raisebook.com/" target="_blank"><img src="https://s3.amazonaws.com/landtrustalliance.org/styles/1600-800/s3/rotator/image/ConservationFoundationGulfCoast-Florida-GlennGardner-G2photos-1600-800.jpg?itok=IAxeAMvY" alt="Raisebook" title="Raisebook" className="img-fluid" /></a>
+								<a href="https://raisebook.com/" target="_blank"><img src={RaisebookLogo} alt="Raisebook" title="Raisebook" className="img-fluid" /></a>
 							</div>
 									
 							<div className="col-lg-12 mt-5">

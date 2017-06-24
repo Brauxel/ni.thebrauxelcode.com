@@ -310,27 +310,6 @@ header {
 			}
 		}
 		
-		.search-icon {
-			background-color: transparent;
-			background-image: url(components/images/search-icon.png);
-			background-repeat: no-repeat;
-			display: block;
-			width: 20px;
-			height: 20px;
-			border: none;
-			text-indent: -1000px;
-			overflow: hidden;
-			position: absolute;
-			top: 8px;
-			right: 5px;
-			
-			svg {
-				path {
-					fill: #000;
-				}
-			}
-		}
-		
 		@include media-breakpoint-up(lg) {
 			display: block;
 		}		
