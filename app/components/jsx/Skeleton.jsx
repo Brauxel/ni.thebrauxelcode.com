@@ -3,6 +3,7 @@ import Header from './globals/Header.jsx';
 import Home from './home/Home.jsx';
 import Footer from './globals/Footer.jsx';
 import PostListing from './posts/PostListing.jsx';
+import SearchListing from './search/SearchList.jsx';
 import ImageScanner from './helpers/ImageScanner.jsx';
 
 // This function automates the import of images
@@ -22,10 +23,10 @@ const logos = ImageScanner(require.context('../images/logos', false, /\.(png|jpe
 export default class Skeleton extends React.Component {
   render() {
     return (
-        <section className="page-template-internal-home blog-9">
+        <section className="page-template-default page page-id-7220 blog-1" id="search-page">
           <div className="overlay main-overlay">&nbsp;</div>
           <Header />
-          <PostListing logo={logos['nmb.svg']} />
+          <SearchListing />
           <Footer />
         </section>
     );

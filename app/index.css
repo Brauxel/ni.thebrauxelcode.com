@@ -18,6 +18,7 @@
 @import "./components/scss/_blog.scss";
 @import "./components/scss/_single.scss";
 @import "./components/scss/_company.scss";
+@import "./components/scss/_search.scss";
 @import "./components/scss/_nmb.scss";
 @import "./components/scss/_nor.scss";
 @import "./components/scss/_nts.scss";
