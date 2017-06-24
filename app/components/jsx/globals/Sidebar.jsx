@@ -7,8 +7,8 @@ export default class Sidebar extends React.Component {
 			<aside className="col-lg-2 sidebar pt-5 pb-5 offset-lg-1">
 				<div className="row text-center company-logo mb-5 pb-4 pt-4">
     				<div className="col-xl-12">
-						<a className="image" href="#"><img src="https://s3.amazonaws.com/landtrustalliance.org/styles/1600-800/s3/rotator/image/ConservationFoundationGulfCoast-Florida-GlennGardner-G2photos-1600-800.jpg?itok=IAxeAMvY" alt="" title="" className="img-fluid mb-4" /></a>
-						<p className="mb-0"><a href="#">Name</a></p>
+						<a className="image" href="#"><img src="http://staging.nextminingboom.com/wp-content/uploads/sites/9/2016/10/PSM.jpg" alt="" title="" className="img-fluid mb-4" /></a>
+						<p className="mb-0"><a href="#">Peninsula Mines Limited (ASX: PSM)</a></p>
 					</div>
 				</div>
 

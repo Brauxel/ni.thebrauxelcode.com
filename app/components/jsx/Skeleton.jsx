@@ -5,6 +5,7 @@ import Footer from './globals/Footer.jsx';
 import PostListing from './posts/PostListing.jsx';
 import SearchListing from './search/SearchList.jsx';
 import ImageScanner from './helpers/ImageScanner.jsx';
+import Post from './posts/Post.jsx';
 
 // This function automates the import of images
 // @param folder_path
@@ -23,10 +24,10 @@ const logos = ImageScanner(require.context('../images/logos', false, /\.(png|jpe
 export default class Skeleton extends React.Component {
   render() {
     return (
-        <section className="page-template-default page page-id-7220 blog-1" id="search-page">
+        <section className="post-template-default single single-post postid-8408 single-format-standard blog-9">
           <div className="overlay main-overlay">&nbsp;</div>
           <Header />
-          <SearchListing />
+          <Post logo={logos['nmb.svg']} />
           <Footer />
         </section>
     );

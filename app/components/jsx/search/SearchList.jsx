@@ -23,6 +23,8 @@ export default class extends React.Component {
 								<SearchItem />
 								<SearchItem />
 								<SearchItem />
+								<SearchItem />
+								<SearchItem />
 							</section>
 		    			</div>
 		    		</div>
