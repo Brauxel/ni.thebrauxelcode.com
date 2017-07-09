@@ -13,6 +13,7 @@ html {
 		
 		main {
 			padding-bottom: 2rem;
+			word-wrap: break-word;
 		}
 		
 		h2 {
@@ -34,6 +35,10 @@ html {
 		
 		.hider {
 			display: none;
+		}
+		
+		.super-show {
+			display: block !important;
 		}
 		
 		a, button {
@@ -61,8 +66,8 @@ html {
 			}
 			
 			&.btn-secondary {
-				//@include button-variant($color, $background, $border);
 				font-family: $btn-secondary-font-family;
+				text-transform: uppercase;
 				
 				@include button-size($btn-padding-y, 2rem, $btn-secondary-font-size, $btn-border-radius);
 				//@include button-variant($white, $gray, $gray);
@@ -72,6 +77,10 @@ html {
 					background-color: $white;
 				}
 			}
+		}
+		
+		.close-btn {
+			display: none;
 		}
 		
 		.align-wrapper {
@@ -115,6 +124,13 @@ html {
 			background-position: center center;
 			font-size: 1.7rem;
 			color: $white;
+			display: none;
+			cursor: pointer;
+			
+			@include media-breakpoint-up(lg) {
+				width: 100%;
+				display: block;
+			}
 			
 			.img-fluid {
 				width: 300px;
@@ -127,6 +143,7 @@ html {
 			}
 			
 			.btn-secondary {
+				text-transform: uppercase;
 				@include button-size($btn-padding-y, $btn-padding-x, $font-size-blog-listing, $btn-border-radius);
 			}
 			
@@ -147,20 +164,37 @@ html {
 				}
 			}
 		}
+		.date-holder {
+			float: left;
+		}
+		
 		.text-size {
 			font-size: 1.1rem;
 			line-height: 2rem;
 			text-transform: uppercase;
 			//margin-bottom: 3rem;
+			margin-left: 15px;
+			
+			@include media-breakpoint-up(md) {
+				margin-left: 0px;
+			}
 			
 			.control {
   				width: 20px;
   				height: 20px;
-  				background-color: #86888A;
+  				background: rgba(134, 136, 138, 0.5);
   				position: relative;
 				display: block;
 				text-indent: -1000px;
 				overflow: hidden;
+				
+				&:hover {
+					background: rgba(134, 136, 138, 1);
+				}
+				
+				&:focus {
+					background: rgba(134, 136, 138, 0.5);
+				}
 				
 				&::after {
 					content: " ";
@@ -221,11 +255,18 @@ html {
 			position: absolute;
 			top: 8px;
 			right: 5px;
+			transition: all 0.4s ease-out 0s;
 			
 			svg {
 				path {
 					fill: #000;
 				}
+			}
+		}
+		
+		.focused {
+			.search-icon {
+				background-image: url(components/images/search-icon-focused.png);
 			}
 		}
 	}

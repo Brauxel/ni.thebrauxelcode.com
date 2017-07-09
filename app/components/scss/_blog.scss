@@ -37,9 +37,17 @@
 	}
 	
 	.gform_wrapper {
-		margin: 2rem 0px;
-		display: block;
-		width: 100%;
+		margin: 2rem auto;
+		//display: block;
+		width: 90%;
+		
+		@include media-breakpoint-up(md) {
+			width: 100%;
+		}
+		
+		&.articles-form_wrapper {
+			display: block;
+		}
 	}
 	
 	.current-stocks {
@@ -51,7 +59,7 @@
 			
 			@include media-breakpoint-up(md) {
 				&:hover {
-					color: #fff;
+					background: rgba(230, 230, 231, 0.5);
 				}
 			}
 		}

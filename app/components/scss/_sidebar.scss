@@ -1,10 +1,33 @@
 .sidebar {
 	color: $sidebar-text-color;
 	
+	.show-form-container {
+		display: none;
+		
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
+	}
+	
+	@include media-breakpoint-up(xl) {
+		.fixed-pos {
+			position: fixed;
+			top: 80px;
+			width: 165px;
+		}
+
+		.fixed-absolute {
+			position: absolute;
+			bottom: 0px;
+			width: 165px;
+		}
+	}
+	
 	.gform_wrapper {
 		color: $white;
 		margin: 2rem -15px !important;
 		width: auto !important;
+		display: none;
 		
 		form {
 			@include media-breakpoint-up(lg) {
@@ -14,7 +37,7 @@
 			
 			h3 {
 				text-transform: uppercase;
-				line-height: 1.1;
+				line-height: 1.5;
 				font-size: 1.5rem;
 				text-align: center;
 				margin-bottom: 0px;
@@ -35,18 +58,33 @@
 								}
 							}
 						}
+						
+						&.options {
+							display: block;
+							
+							.gfield_checkbox {
+								label {
+									display: block;
+									
+									&::before {
+										top: 10px;
+									}
+								}
+							}
+						}
 					}
 				}
 			}
 			
 			.gform_footer {
 				.btn-outline-primary {
-					font-weight: bold;
+					font-weight: normal;
 					white-space: normal;
 					width: 170px;
 					text-align: center;
 					margin: 0 auto;
 					display: block;
+					opacity: 1;
 					@include button-size(1.5rem, 4.5rem, $font-size-blog-listing, 0);
 
 					@include media-breakpoint-up(lg) {
@@ -56,7 +94,7 @@
 					
 					@include media-breakpoint-up(xl) {
 						width: 165px;
-						@include button-size(1.5rem, 1.3rem, $font-size-blog-listing, 0);
+						@include button-size(1.5rem, 1.4rem, $font-size-blog-listing, 0);
 					}
 				}
 			}
@@ -93,8 +131,26 @@
 
 	.raisebook-panel {
 		background-color: #AEA283;
+		width: 280px;
+		margin: 0 auto;
 		
 		@include media-breakpoint-up(lg) {
+			width: 95%;
+		}
+		
+		.rb-logo {
+			a {
+				display: block;
+				
+				@include media-breakpoint-up(sm) {
+				}
+			}
+		}
+		
+		@include media-breakpoint-up(lg) {
+			width: auto;
+			margin: 3rem -15px;
+			
 			.padding-reset {
 				padding-left: 5px;
 				padding-right: 5px;

@@ -7,10 +7,14 @@ header {
 	transition: all 0.2s ease-out 0s;
 	
 	.logo {
+		@include media-breakpoint-up(lg) {
+			display: block !important;
+		}
+		
 		a {
 			width: 40px;
 			height: 40px;
-			display: none;
+			display: none;			
 			
 			@include media-breakpoint-up(lg) {
 				display: block;
@@ -19,11 +23,28 @@ header {
 			svg {
 				fill: #fff;
 				transition: $transition-base;
+				
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+			}
+			
+			img {
+				display: none;
+				opacity: 0.7;
+				transition: all 0.4s ease-out 0s;
+				
+				@include media-breakpoint-up(lg) {
+					display: block;
+				}
 			}
 			
 			&:hover {
 				svg {
 					opacity: 0.8;
+				}
+				img {
+					opacity: 1;
 				}
 			}
 		}
@@ -32,9 +53,14 @@ header {
 			position: absolute;
 			top:15px;
 			left: 15px;
+			display: block !important;
 			
 			a {
 				display: block;
+				
+				@include media-breakpoint-up(lg) {
+					display: none !important;
+				}
 				
 				svg {
 					fill: #fff !important;
@@ -73,26 +99,34 @@ header {
 		@include media-breakpoint-up(lg) {
 			background-color: $black;
 			opacity: 1;
-			border-bottom: 1px solid $light-black;
+			border-bottom: 1px solid rgba(41, 40, 42, 0.6);
+			//border-color: rgba(41, 40, 42, 0.6);
 			
-				a {
-					color: $white;
+			a {
+				color: $white;
 
-					&:hover {
-						color: $white;
-					}
+				&:hover {
+					color: $white;
 				}
+			}
 		}
 			
 			
 		&.white {
-			.logo {				
+			.logo {
 				a {
 					display: block;
 					
 					svg {
 						fill: #29282a;
 						opacity: 0.6;
+						display: block;
+					}
+					
+					@include media-breakpoint-up(lg) {
+						img {
+							display: none;
+						}
 					}
 				}
 			}
@@ -117,6 +151,10 @@ header {
 					&::-ms-input-placeholder { color: #898b8e; }
 
 				}
+				
+				.search-icon {
+					background-image: url(components/images/search-icon-focused.png);
+				}
 			}
 		}
 			
@@ -126,14 +164,6 @@ header {
 		background: $black;
 		opacity: 0.6;		
 	}
-	
-	/*.navbar-toggler {
-		display: block;
-			
-		@include media-breakpoint-up(lg) {
-			display: none;
-		}
-	}*/
 	
 	nav {
 		transition: all 0.2s ease-out 0s;
@@ -210,6 +240,10 @@ header {
 					text-transform: uppercase;
 					font-weight: bolder;
 					
+					@include media-breakpoint-up(lg) {
+						text-align: center;
+					}
+					
 					span {
 						color: #fff;
 						opacity: 0.6;
@@ -229,9 +263,13 @@ header {
 						font-size: 1.3rem;
 					}
 
-					&:hover {
+					&:hover, &:focus {
 						color: #fff;
 						text-decoration: none;
+						
+						span {
+							color: #fff;
+						}
 					}
 				}
 				
@@ -288,6 +326,10 @@ header {
 	.navbar-form {
 		display: none;
 		position: relative;
+		
+		@include media-breakpoint-up(lg) {
+			margin-top: 4px;
+		}
 		
 		.form-control {
 			opacity: 0.65;
@@ -346,6 +388,7 @@ header {
 			right: 0px;
 			top: auto;
 			z-index: 1;
+			display: block !important;
 		}
 		
 		

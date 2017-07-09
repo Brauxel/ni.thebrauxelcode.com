@@ -27,7 +27,7 @@ export default class Skeleton extends React.Component {
         <section className="post-template-default single single-post postid-8408 single-format-standard blog-9">
           <div className="overlay main-overlay">&nbsp;</div>
           <Header />
-          <Post logo={logos['nmb.svg']} />
+          <PostListing logo={logos['nmb.svg']} />
           <Footer />
         </section>
     );

@@ -1,6 +1,10 @@
 #search-page {
 	background-color: $light-black;
-	padding-top: 6rem;
+	padding-top: 2rem;
+	
+	@include media-breakpoint-up(lg) {
+		padding-top: 9rem;
+	}
 	
 	.results-search-form-holder {
 		.navbar-form {
@@ -21,6 +25,7 @@
 				
 				&:focus {
 					background-color: $white;
+					color: $light-black;
 				}
 			}
 		}

@@ -7,23 +7,24 @@ export default class Post extends React.Component {
 	render() {
 		return(
 			<main id="post">
-				<div className="jumbotron banner">
-		    		<section className="banner-content align-middle">
-		    			<div className="inner">
-		    				<div className="container">
-		    					<div className="row">
-		    						<div className="col-xl-5 mb-5">
-		    							<img className="img-fluid" src={this.props.logo} alt="" title="" />
-		    						</div>
-		    							
-		    						<div className="col-xl-7">
-		    							<SubscribeForm />
-		    						</div>
-		    					</div>
-		    				</div>
-		    			</div>
-		    		</section>
-		    	</div>
+	    		<div className="jumbotron banner">
+	    			<section className="banner-content align-middle">
+	    				<div className="inner">
+	    					<div className="container">
+	    						<div className="row">
+	    							<div className="col-xl-5 mb-5">
+										<a href="#"><img src={this.props.logo} alt="" title="" height="55" /></a>
+	    							</div>
+	    							
+	    							<div className="col-xl-7 form-holder">
+	    								<a href="#" className="btn btn-outline-primary show-form">Keep me informed</a>
+	    								<SubscribeForm />
+	    							</div>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</section>
+	    		</div>
 
 	    		<div className="container">
 	    			<div className="row">

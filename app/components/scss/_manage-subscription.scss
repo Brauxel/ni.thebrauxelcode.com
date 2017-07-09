@@ -1,6 +1,15 @@
-.page-template-subscribe-template {
+.page-template-subscribe-template, .page-template-email-preferences, .page-template-contact-template {
 	main {
-		padding-top: 65px;
+		padding-top: 2rem;
+		
+		.holder {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			padding-top: 9rem;
+		}
 		
 		.btn-outline-primary {
 			@include button-outline-variant($light-black, $white);
@@ -175,11 +184,48 @@
 												label {
 													font-size: 1.8rem;
 													font-family: $font-family-sans-serif;
+													margin-left: 0px;
+
+													&::before {
+														left: auto;
+														right: 10px;
+														width: 25px;
+														height: 25px;
+														top: auto;
+														margin-top: 25px;
+
+														@include media-breakpoint-up(lg) {
+															right: 25%;
+														}
+													}
 												}
 
 												&.gchoice_1_3_6 {
 													input[type="checkbox"] {
 														display: none;
+													}
+													
+													label {
+														&::before {
+															display: none;
+														}
+													}
+												}
+												
+												&.gchoice_1_3_7 {
+													label {
+														margin-left: 50px;
+														font-size: 1.4rem;
+														
+														&::before {
+															right: auto;
+															left: 20px;
+															margin-top: 15px;
+															
+															@include media-breakpoint-up(lg) {
+																margin-top: 10px;
+															}
+														}
 													}
 												}
 
@@ -201,6 +247,10 @@
 
 						.gform_footer {
 							margin-top: 0rem;
+							
+							.disclaimer-rb {
+								font-size: 1.4rem;
+							}
 
 							.btn-outline-primary {
 								margin-top: 2rem;
@@ -223,5 +273,44 @@
 				}
 			}
 		}
+		
+		#rb-block {
+			label {
+				font-size: 1.4rem;
+				margin-left: 5rem;
+				
+				@include media-breakpoint-up(md) {
+					margin-left: 6.5rem;
+				}
+				
+				&::before {
+					left: 20px;
+					margin-top: 15px;
+					height: 25px;
+					width: 25px;
+					right: auto;
+					
+					@include media-breakpoint-up(lg) {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+		
+		.rb-logo {
+			label {
+				&::before {
+					display: none !important;
+				}
+			}
+		}
+	}
+	
+	#unsubform .btn {
+		background-color: transparent;
+		text-decoration: underline;
+		padding: 0px;
+		background-color: transparent;
+		font-size: 1.4rem;
 	}
 }

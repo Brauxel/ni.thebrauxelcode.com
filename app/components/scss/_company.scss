@@ -1,4 +1,6 @@
 .tax-company {
+	font-size: 1.8rem;
+	
 	.article-list {
 		font-size: 1.5rem;
 		
@@ -29,6 +31,37 @@
 		.btn-outline-primary {
 			@include button-size(0.2rem, 2rem, $font-size-blog-listing, $btn-border-radius);
 			@include button-outline-variant($black, $white);
+		}
+	}
+	
+	.show-form-container {
+		display: block;
+		
+		.show-form {
+			display: none;
+			
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+		
+		.gform_wrapper {
+			display: block;
+			
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+			
+			form {
+				max-width: 90%;
+				flex: 0 0 90%;
+				margin:  0 auto;
+				
+				@include media-breakpoint-up(lg) {
+					max-width: 100%;
+					flex: 0 0 100%;
+				}
+			}
 		}
 	}
 }

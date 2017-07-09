@@ -2,62 +2,60 @@
 	* Next Small Cap Custom Styles
 */
 .blog-13 {
-	.jumbotron {
+	main {
+		.jumbotron {
 			background-image: url(components/images/banners/nsc.jpg);
-		
-		.btn-outline-primary {
-			@include button-outline-variant($white, $nsc-brand-color);
+
+			&.banner {
+				.overlay {
+					display: block;
+				}
+			}
+
+			.btn-outline-primary {
+				@include button-outline-variant($white, $nsc-brand-color);
+			}
 		}
-	}
-	
-	.articles {
-		.btn-outline-primary {
-			@include button-outline-variant($nsc-brand-color, #fff);
-		}
-	}
-	
-	&.tax-company {
-		.article-list {
+
+		.articles {
 			.btn-outline-primary {
 				@include button-outline-variant($nsc-brand-color, #fff);
 			}
 		}
-	}
-	
-	.wp-pagenavi {
-		//background-color: $nmb-brand-color;
-		//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
-		
-		.page {
-			&:hover, &:active, &.active {
+
+		&.tax-company {
+			.article-list {
+				.btn-outline-primary {
+					@include button-outline-variant($nsc-brand-color, #fff);
+				}
+			}
+		}
+
+		.wp-pagenavi {
+			//background-color: $nmb-brand-color;
+			//@include pagination-size(0.5rem, 0.5rem, $font-size-blog-listing, $line-height, $border-radius);
+
+			.page {
+				&:hover, &:active, &.active {
+					background-color: $nsc-brand-color;
+					border-color: $nsc-brand-color;
+				}
+			}
+
+			.current {
 				background-color: $nsc-brand-color;
 				border-color: $nsc-brand-color;
 			}
 		}
-		
-		.current {
-			background-color: $nsc-brand-color;
-			border-color: $nsc-brand-color;
-		}
-	}
-	
-	.gform_wrapper {
-		form {
-			background-color: $nsc-brand-color;
-			
-			.gform_footer {
-				.btn-outline-primary {
-					@include button-outline-variant($white, $nsc-brand-color);
-				}
-			}
-		}
-	}
-	
-	.current-stocks {
-		.logo {
-			@include media-breakpoint-up(md) {
-				&:hover {
-					background-color: $nsc-brand-color;
+
+		.gform_wrapper {
+			form {
+				background-color: $nsc-brand-color;
+
+				.gform_footer {
+					.btn-outline-primary {
+						@include button-outline-variant($white, $nsc-brand-color);
+					}
 				}
 			}
 		}

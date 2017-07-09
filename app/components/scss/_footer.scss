@@ -4,6 +4,14 @@ footer {
 	padding-bottom: 1.5rem;
 	font-size: 1.4rem;
 	
+	.form-control {
+		width: 100%;
+		
+		@include media-breakpoint-up(md) {
+			width: 100%;
+		}
+	}
+	
 	.secondary-nav {
 		li {
 		a {
@@ -75,6 +83,44 @@ footer {
 		
 		@include media-breakpoint-up(md) {
 			margin-top: 13rem;
+		}
+	}
+	
+	.gform_wrapper {
+		width: 100% !important;
+		margin: 2rem 0px;
+		
+		form {
+			padding: 0px;
+			
+			.gform_body {
+				padding: 0px;
+				
+				@include media-breakpoint-up(md) {
+					.gform_fields {
+						.gfield {
+							flex: 0 0 100%;
+							max-width: 100%;
+						}
+					}
+				}
+				
+				.options {
+					display: none;
+				}
+				
+				.manage-controls {
+					display: none !important;
+				}
+			}
+			
+			.gform_footer {
+				padding: 0px;
+				
+				p {
+					display: none !important;
+				}
+			}
 		}
 	}
 }

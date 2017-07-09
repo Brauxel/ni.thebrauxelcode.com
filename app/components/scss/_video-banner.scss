@@ -1,6 +1,11 @@
-.banner {
+#video-banner-container {
 	position: relative;
 	overflow: hidden;
+	line-height: 1.5;
+	
+	.banner-content {
+		height: 100%;
+	}
 	
 	.overlay {
 		display: block;
@@ -16,17 +21,6 @@
 		height: 820px;
 	}
 	
-	h1 {
-		display: block;
-		overflow: hidden;
-		
-		span {
-			text-indent: -5000px;	
-			display: block;
-			height: 1px;
-		}
-	}
-	
 	.video-container {
 		background-image: url(components/images/banners/video-bg.jpg);
 		background-position: center center;
@@ -35,6 +29,10 @@
 		position: absolute;
 		width: 100%;
 		overflow: hidden;
+		
+		.overlay {
+			display: block;
+		}
 		
 		.the-video {
 			display: none;
@@ -46,133 +44,6 @@
 				min-height: 100%;
 				min-width: 100%;
 				top: 50%;
-			}
-		}
-	}
-	
-	.banner-content {
-		color: #fff;
-		font-size: 1.6rem;
-		font-weight: normal;
-		height: 100%;
-		position: relative;		
-		width: 100%;
-		z-index: 99;
-		padding-top: 3rem;
-		
-		@include media-breakpoint-up(lg) {
-			position: absolute;
-			display: table;
-		}
-		
-		.wrap {
-			@include media-breakpoint-up(lg) {
-				display: table-cell;
-				vertical-align: middle;
-			}
-		}
-		
-		.container {
-			p {
-				&.space-top {
-					margin-top: 20px;
-					margin-bottom: 20px;
-					
-					@include media-breakpoint-up(lg) {
-						margin-top: 55px;
-						margin-bottom: 55px;
-					}
-				}
-			}
-			
-			.logo {
-				display: block;				
-				
-				@include media-breakpoint-up(sm) {
-					width: 350px;
-				}
-			}
-			
-			.tiles {
-				.tile {
-					position: relative;
-					margin-bottom: 20px;
-					
-					@include media-breakpoint-up(sm) {
-						padding-left: 7px;
-						padding-right: 7px;
-						
-						&:first-child {
-							padding-left: 14px;
-						}
-						
-						&:last-child {
-							padding-right: 14px;
-						}
-					}
-					
-					a {
-						display: block;
-						overflow: hidden;
-						width: 90%;
-						margin: 0 auto;
-						
-						@include media-breakpoint-up(sm) {
-							width: 100%;
-						}
-						
-						img {
-							width: 100%;
-							
-							&.tiled-logo {
-								transition: all 0.2s ease-out 0s;
-					
-								&:hover {
-									transform: scale(1.1);
-								}								
-							}
-						}
-						
-						&.title {
-							position: absolute;
-							z-index: 99;
-							bottom: 20px;
-							left: 0px;
-							right: 0px;
-							margin: 0 auto;
-							
-							@include media-breakpoint-up(sm) {
-								bottom: 10px;
-							}
-							
-							img {
-								width: 75%;
-								max-width: 75%;
-								
-								@include media-breakpoint-up(sm) {
-									margin-left: 10px;
-								}
-							}
-						}
-					}
-					
-					.nmb-title {
-						.img-fluid {
-							@include media-breakpoint-up(md) {
-								margin-left: 10px;
-							}
-						}
-					}
-					@include media-breakpoint-up(sm) {
-						&:last-child {
-							.title {
-								img {
-									margin-left: 0px;
-								}
-							}
-						}
-					}
-				}
 			}
 		}
 	}
