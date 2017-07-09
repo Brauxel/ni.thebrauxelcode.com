@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 import Sidebar from './../globals/Sidebar.jsx';
 import Post from './PostPreview.jsx';
 import SubscribeForm from './../subscribe-forms/SubscribeFormOptionLess.jsx';
@@ -6,6 +7,35 @@ import CurrentStock from './../companies/CurrentStock.jsx';
 import RaisebookLogo from './../../images/logos/raisebook.svg';
 
 export default class PostsListing extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = { "posts": [], total: 0, pages: 0 }
+
+		let url = "http://staging.nextminingboom.com/wp-json/posts/";
+
+    	this.getPosts(url);
+	}
+
+  	getPosts(url) {
+    	let posts = {}, total = 0, pages = 0;
+    	let _this = this;
+
+    	Axios.get(url).then(function(response) {
+    		console.log(response);
+      		posts = response.data;
+      		total = parseInt(response.headers['x-wp-total']);
+      		pages = parseInt(response.headers['x-wp-totalpages']);
+
+      		_this.setState({posts: posts, total: total, pages: pages});
+    	});
+  	}
+
+  	componentWillReceiveProps(nextProps, nextState){
+    	url = "http://staging.nextminingboom.com/wp-json/posts/";
+		this.getPosts(url);
+ 	}
+
 	render() {
 		return(
 			<main id="blog">

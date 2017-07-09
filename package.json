@@ -4,8 +4,11 @@
   "description": "NextInvestors theme rendered via ReactJS",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "build": "webpack --progress --color",
+    "production-build": "NODE_ENV=production webpack --progress --color",
+    "watch": "webpack --watch-stdin --progress --color",
+    "watch-quiet": "webpack --watch-stdin",
+    "start": "webpack-dev-server --content-base dist/ --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -61,6 +64,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "webpack-watch-server": "^1.0.0"
   }
 }
