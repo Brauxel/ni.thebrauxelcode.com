@@ -8,6 +8,7 @@ export default class Post extends React.Component {
 		return(
 			<main id="post">
 	    		<div className="jumbotron banner">
+	    			<div className="overlay">&nbsp;</div>
 	    			<section className="banner-content align-middle">
 	    				<div className="inner">
 	    					<div className="container">

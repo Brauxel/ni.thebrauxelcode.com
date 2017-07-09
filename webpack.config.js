@@ -49,9 +49,9 @@ module.exports = {
   			},
 			{
 				test: /\.(woff|woff2|eot|ttf)$/,
-				loader: 'url-loader',
+				loader: 'file-loader',
 				options: {
-					limit: 100000
+					name: './fonts/[name].[ext]',
 				},
 			},
 			{

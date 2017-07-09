@@ -24,10 +24,10 @@ const logos = ImageScanner(require.context('../images/logos', false, /\.(png|jpe
 export default class Skeleton extends React.Component {
   render() {
     return (
-        <section className="post-template-default single single-post postid-8408 single-format-standard blog-9">
+        <section className="home page-template page-template-landing page-template-landing-php page page-id-829 blog-1">
           <div className="overlay main-overlay">&nbsp;</div>
           <Header />
-          <PostListing logo={logos['nmb.svg']} />
+          <Home />
           <Footer />
         </section>
     );
