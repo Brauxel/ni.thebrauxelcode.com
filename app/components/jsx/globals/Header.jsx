@@ -3,6 +3,11 @@ import React from 'react';
 import Nav from './../menus/Nav.jsx';
 import SearchForm from './../search/SearchForm.jsx';
 
+let mainLinks = [
+    { name: 'Home', url: '/', slug: 'home'},
+    { name: 'Mining Boom', url: '/next-mining-boom', slug: 'nmb'}
+];
+
 export default class Header extends React.Component {
     /*
       Base Constructor
@@ -28,7 +33,7 @@ export default class Header extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-9">
-                            <Nav />
+                            <Nav items={mainLinks} />
                         </div>
 
                         <div className="col-sm-3 toggler">

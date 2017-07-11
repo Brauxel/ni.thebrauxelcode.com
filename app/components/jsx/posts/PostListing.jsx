@@ -12,7 +12,7 @@ export default class PostsListing extends React.Component {
 
 		this.state = { "posts": [], total: 0, pages: 0 }
 
-		let url = "http://staging.nextminingboom.com/wp-json/posts/";
+		let url = "http://staging.nextminingboom.com/wp-json/wp/v2/posts/";
 
     	this.getPosts(url);
 	}
@@ -32,13 +32,13 @@ export default class PostsListing extends React.Component {
   	}
 
   	componentWillReceiveProps(nextProps, nextState){
-    	url = "http://staging.nextminingboom.com/wp-json/posts/";
+    	url = "http://staging.nextminingboom.com/wp-json/wp/v2/posts/";
 		this.getPosts(url);
  	}
 
 	render() {
 		return(
-			<main id="blog">
+			<main id="blog" className="home page-template page-template-internal-home page-template-internal-home-php page page-id-1508 blog-9 with-alert">
 	    		<div className="jumbotron banner">
 	    			<div className="overlay">&nbsp;</div>
 	    			<section className="banner-content align-middle">
@@ -64,9 +64,13 @@ export default class PostsListing extends React.Component {
 	    				<div className="col-lg-9">
 							<div className="row">
 	    						<section className="col-lg-12 articles">
-	    							<Post />
-
-	    							<Post />
+						          {this.state.posts.map(
+						            (post) => {
+						              return (
+						                <Post data={post} key={post.id} />
+						              )
+						            }
+						          )}
 	    						</section>
 
 	    						<div className="col-md-12">

@@ -6,6 +6,7 @@ import PostListing from './posts/PostListing.jsx';
 import SearchListing from './search/SearchList.jsx';
 import ImageScanner from './helpers/ImageScanner.jsx';
 import Post from './posts/Post.jsx';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // This function automates the import of images
 // @param folder_path
@@ -24,12 +25,19 @@ const logos = ImageScanner(require.context('../images/logos', false, /\.(png|jpe
 export default class Skeleton extends React.Component {
   render() {
     return (
-        <section className="home page-template page-template-internal-home page-template-internal-home-php page page-id-1508 blog-9">
+      <Router>
+        <div>
           <div className="overlay main-overlay">&nbsp;</div>
           <Header />
-          <PostListing logo={logos['nmb.svg']} />
+
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/next-mining-boom" render={(props) => (<PostListing logo={logos['nmb.svg']} />)} />
+          </div>
+
           <Footer />
-        </section>
+        </div>
+      </Router>
     );
   }
 }

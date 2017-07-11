@@ -23,7 +23,7 @@ const banners = ImageScanner(require.context('../../images/banners', false, /\.(
 export default class Home extends React.Component {
   render() {
     return (
-      <main id="home">
+      <main id="home" className="home page-template page-template-landing page-template-landing-php page page-id-829 blog-1 with-alert">
         <VideoBanner logo={logos['ni.svg']} />
 
         <div className="dark get-updates" id="keep-me-informed">

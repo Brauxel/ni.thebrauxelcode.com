@@ -1,4 +1,6 @@
 .page-template-landing {
+	padding-bottom: 0px;
+	
 	header {
 		.logo {
 			display: none !important;
@@ -41,11 +43,6 @@
 	
 	.banner-content {
 		text-align: center;
-	}
-	&.blog-1 {
-		main {
-			padding-bottom: 0rem;
-		}
 	}
 	
 	.dark {
