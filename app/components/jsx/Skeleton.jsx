@@ -24,6 +24,8 @@ const logos = ImageScanner(require.context('../images/logos', false, /\.(png|jpe
 */
 export default class Skeleton extends React.Component {
   render() {
+    const options = {logo: logos['nmb.svg']}
+
     return (
       <Router>
         <div>
@@ -32,7 +34,9 @@ export default class Skeleton extends React.Component {
 
           <div>
             <Route exact path="/" component={Home} />
+
             <Route exact path="/next-mining-boom" render={(props) => (<PostListing logo={logos['nmb.svg']} />)} />
+            <Route path='/next-mining-boom/:slug' render={(props) => (<Post {...props} data={options} />)} />
           </div>
 
           <Footer />
