@@ -43,7 +43,7 @@ export default class SubscribeFormOptions extends React.Component {
 	  switch(fieldName) {
 	    case 'email':
 	      // For the email field, we check it against a regular expression to see if it’s an email. 
-	      emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+	      emailValid = value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 	      fieldValidationErrors.email = emailValid ? '' : ' is invalid';
 	      break;
 	    case 'name':
