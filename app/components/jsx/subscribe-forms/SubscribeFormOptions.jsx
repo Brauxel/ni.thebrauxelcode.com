@@ -12,8 +12,12 @@ export default class SubscribeFormOptions extends React.Component {
 		super(props);
 
 		this.state = {
-			name: 'Please enter your name',
-			email: 'Please enter your email'
+			name: '',
+			email: '',
+			formErrors: {email: '', name: ''}, //An object with the input field names as keys and any validation errors as their values
+    		emailValid: false, //Boolean property which we’ll use to enable or disable the form submit button, based on our validation results
+    		nameValid: false, //Boolean property which we’ll use to enable or disable the form submit button, based on our validation results
+    		formValid: false, //Boolean property which we’ll use to enable or disable the form submit button, based on our validation results
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -25,14 +29,43 @@ export default class SubscribeFormOptions extends React.Component {
 		const value = target.value;
 		const name = target.name;
 
-		this.setState({
-			[name]: value
-		});
+		this.setState(
+			{[name]: value}, //setState to update input field values in the form
+			() => { this.validateField(name, value) } //The setState method takes a callback function as a second argument, so let’s pass a validation function to it
+		);
 	}
 
- 	handleSubmit(event) {
-    	//alert('A name was submitted: ' + this.state.email);
+	validateField(fieldName, value) {
+	  let fieldValidationErrors = this.state.formErrors;
+	  let emailValid = this.state.emailValid;
+	  let nameValid = this.state.nameValid;
 
+	  switch(fieldName) {
+	    case 'email':
+	      // For the email field, we check it against a regular expression to see if it’s an email. 
+	      emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+	      fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+	      break;
+	    case 'name':
+	      nameValid = value.length >= 6;
+	      fieldValidationErrors.name = nameValid ? '': ' is too short';
+	      break;
+	    default:
+	      break;
+	  }
+
+	  this.setState({formErrors: fieldValidationErrors,
+	                  emailValid: emailValid,
+	                  nameValid: nameValid
+	                }, this.validateForm);
+	}
+
+	validateForm() {
+	  this.setState({formValid: this.state.emailValid && this.state.nameValid});
+	}
+
+
+ 	handleSubmit(event) {
     	let xmlhttp = new XMLHttpRequest();
 		/*xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -48,6 +81,9 @@ export default class SubscribeFormOptions extends React.Component {
   	}
 
 	render() {
+		// ButtonStyles to light up the submit button on valid inputs
+		let buttonStyles = this.state.formValid ? 'btn btn-outline-primary active' : 'btn btn-outline-primary disabled';
+
 		return (
 			<form onSubmit={this.handleSubmit} type="POST">
 				<div className="row">
@@ -64,11 +100,11 @@ export default class SubscribeFormOptions extends React.Component {
 					<div className="col-lg-8">
 						<div className="row">
 							<div className="col-sm-6">
-								<input className="form-control" placeholder="Name" name="name" type="text" value={this.state.name} onChange={this.handleChange} required />
+								<input className="form-control" placeholder="Please enter your name" name="name" type="text" value={this.state.name} onChange={this.handleChange} required />
 							</div>
 
 							<div className="col-sm-6">
-								<input className="form-control" placeholder="Email" name="email" type="text" value={this.state.email} onChange={this.handleChange} required />
+								<input className="form-control" placeholder="Please enter your email" name="email" type="text" value={this.state.email} onChange={this.handleChange} required />
 							</div>
 						</div>
 					</div>
@@ -76,7 +112,7 @@ export default class SubscribeFormOptions extends React.Component {
 
 				<div className="row mt-5">
 					<div className="col-lg-12">
-						<button className="btn btn-outline-primary disabled" type="submit">Keep me informed about all next investor articles</button>
+						<button className={buttonStyles} type="submit" disabled={!this.state.formValid}>Keep me informed about all next investor articles</button>
 					</div>
 				</div>
 			</form>
