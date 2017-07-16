@@ -66,16 +66,28 @@ export default class SubscribeFormOptions extends React.Component {
 
 
  	handleSubmit(event) {
-    	let xmlhttp = new XMLHttpRequest();
+    	//let xmlhttp = new XMLHttpRequest();
 		/*xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         };*/
 
-        xmlhttp.open("POST", "send.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("fname=Henry&lname=Ford"); 
+        //xmlhttp.open("POST", "send.php", true);
+        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //xhttp.send("fname=Henry&lname=Ford");
+
+		/*axios.post('bin/FormController.php', {
+		    firstName: this.state.name
+		  })
+		  .then(function (response) {
+		    console.log(response);
+		  })
+		  .catch(function (error) {
+		    console.log(error);
+		});*/
+
+		console.log(this.state.name);
 
     	event.preventDefault();
   	}
@@ -85,7 +97,7 @@ export default class SubscribeFormOptions extends React.Component {
 		let buttonStyles = this.state.formValid ? 'btn btn-outline-primary active' : 'btn btn-outline-primary disabled';
 
 		return (
-			<form onSubmit={this.handleSubmit} type="POST">
+			<form onSubmit={this.handleSubmit.bind(this)} type="POST">
 				<div className="row">
 					<div className="col-md-12">
 						<h3>Recieve Latest Next Investors Updates</h3>

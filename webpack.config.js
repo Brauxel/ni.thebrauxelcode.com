@@ -18,7 +18,7 @@ const minifyJS = new webpack.optimize.UglifyJsPlugin({
 
 
 module.exports = {
-	entry: [__dirname + '/app/index.js', __dirname + '/app/index.css'],
+	entry: [__dirname + '/app/client/index.js', __dirname + '/app/client/index.css'],
 	module: {
 		rules: [
 			{
