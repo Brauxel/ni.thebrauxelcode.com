@@ -9,22 +9,17 @@
 import { renderToString } from 'react-dom/server';
 import React from 'react';
 
-export default (renderMe) => `<!DOCTYPE html>
-<html lang="en">
+export default (renderMe, head) => `<!DOCTYPE html>
+<html ${head.htmlAttributes.toString()}>
     <head>
         <meta charset="UTF-8">
-        <title>Universal React Router 4 Demo</title>
-        <style>
-            body {
-                font-family: Helvetica Neue, Arial, sans-serif;
-                margin: 0;
-            }
-            html { box-sizing: border-box; }
-            *, *:before, *:after { box-sizing: inherit; }
-        </style>
+        ${head.title}
+        ${head.meta}
+        ${head.link}
+        <link rel='stylesheet' href='/static/bundle.css'/>
     </head>
     <body>
         <div id="app">${renderToString(renderMe)}</div>
-        <script src="/static/client.js"></script>
+        <script src="/static/bundle.js"></script>
     </body>
 </html>`;
