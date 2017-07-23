@@ -11,7 +11,7 @@ export default class Post extends React.Component {
 
 	    let _this = this;
 	    let post = {};
-	    let postUrl = 'http://staging.nextminingboom.com/wp-json/wp/v2/posts?slug='+this.props.match.params.slug;
+	    let postUrl = 'http://nextinvestors.thebrauxellamp.com/next-mining-boom/wp-json/wp/v2/posts?slug='+this.props.match.params.slug;
 
 	    this.state = { "post" : { title: { rendered: "" }, content: { rendered: ""}, author_name: "", categoryID: 0, category_name: ""}}
 

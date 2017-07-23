@@ -10,11 +10,13 @@ export default class PreviewImage extends React.Component {
 	  componentDidMount(){
 	    let _this = this;
 	    let posts = {};
+    	let url = "http://nextinvestors.thebrauxellamp.com/" + this.props.site  + "/wp-json/wp/v2/media/" + this.props.mediaId;
 
-	    Axios.get('http://staging.nextminingboom.com/wp-json/wp/v2/media/' + this.props.mediaId).then(function(response) {
+	    Axios.get(url).then(function(response) {
 	      _this.setState({image_src: response.data.source_url, width: response.data.media_details.width, height: response.data.media_details.height, alt: response.data.alt_text, sizes: response.data.media_details.sizes })
 	    });
 	  }
+
 	  render(){
 	    let srcSet = "";
 	    let srcSizes = this.state.sizes;

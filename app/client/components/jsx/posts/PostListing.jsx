@@ -10,11 +10,20 @@ export default class PostsListing extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { "posts": [], total: 0, pages: 0 }
+		//let url = "http://nextinvestors.thebrauxellamp.com/" + this.props.match.params.site  + "/wp-json/wp/v2/posts/";
+		//this.state = { "posts": [], total: 0, pages: 0, url: url }
+    	//this.getPosts(url);
 
-		let url = "http://staging.nextminingboom.com/wp-json/wp/v2/posts/";
+    	this.state = { "posts": [], total: 0, pages: 0, site: '' }
 
-    	this.getPosts(url);
+    	console.log(this.props.match.params.site);
+	}
+
+	componentDidMount() {
+		let url = "http://nextinvestors.thebrauxellamp.com/" + this.props.match.params.site  + "/wp-json/wp/v2/posts/";
+		this.getPosts(url);
+		this.setState({site: this.props.match.params.site});
+		console.log('componentDidMount');
 	}
 
   	getPosts(url) {
@@ -29,14 +38,19 @@ export default class PostsListing extends React.Component {
 
       		_this.setState({posts: posts, total: total, pages: pages});
     	});
+    	console.log("getposts");
   	}
 
   	componentWillReceiveProps(nextProps, nextState){
-    	url = "http://staging.nextminingboom.com/wp-json/wp/v2/posts/";
+    	let url = "http://nextinvestors.thebrauxellamp.com/" + nextProps.match.params.site  + "/wp-json/wp/v2/posts/";
 		this.getPosts(url);
+    	this.setState({site: nextProps.match.params.site});
+    	console.log("componentWillReceiveProps-"+ nextProps.match.params.site);
  	}
 
 	render() {
+		console.log("render");
+
 		return(
 			<main id="blog" className="home page-template page-template-internal-home page-template-internal-home-php page page-id-1508 blog-9 with-alert">
 	    		<div className="jumbotron banner">
@@ -67,7 +81,7 @@ export default class PostsListing extends React.Component {
 						          {this.state.posts.map(
 						            (post) => {
 						              return (
-						                <Post data={post} key={post.id} />
+						                <Post data={post} key={post.id} site={this.state.site} />
 						              )
 						            }
 						          )}

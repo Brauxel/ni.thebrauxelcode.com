@@ -30,8 +30,8 @@ export default class Skeleton extends React.Component {
         <div>
           <Route exact path="/" component={Home} />
 
-          <Route exact path="/next-mining-boom" render={(props) => (<PostListing logo={logos['nmb.svg']} />)} />
-          <Route path='/next-mining-boom/:slug' render={(props) => (<Post {...props} data={options} />)} />
+          <Route exact path="/:site" render={(props) => (<PostListing {...props} logo={logos['nmb.svg']} />)} />
+          <Route path='/:site/:slug' render={(props) => (<Post {...props} data={options} />)} />
         </div>
     );
   }
