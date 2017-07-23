@@ -6,7 +6,7 @@ import PostListing from './posts/PostListing.jsx';
 import SearchListing from './search/SearchList.jsx';
 import ImageScanner from './helpers/ImageScanner.jsx';
 import Post from './posts/Post.jsx';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // This function automates the import of images
 // @param folder_path
@@ -27,21 +27,12 @@ export default class Skeleton extends React.Component {
     const options = {logo: logos['nmb.svg']}
 
     return (
-      <Router>
         <div>
-          <div className="overlay main-overlay">&nbsp;</div>
-          <Header />
+          <Route exact path="/" component={Home} />
 
-          <div>
-            <Route exact path="/" component={Home} />
-
-            <Route exact path="/next-mining-boom" render={(props) => (<PostListing logo={logos['nmb.svg']} />)} />
-            <Route path='/next-mining-boom/:slug' render={(props) => (<Post {...props} data={options} />)} />
-          </div>
-
-          <Footer />
+          <Route exact path="/:site" render={(props) => (<PostListing {...props} logo={logos['nmb.svg']} />)} />
+          <Route path='/:site/:slug' render={(props) => (<Post {...props} data={options} />)} />
         </div>
-      </Router>
     );
   }
 }

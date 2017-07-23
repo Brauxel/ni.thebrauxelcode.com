@@ -5,7 +5,11 @@ import SearchForm from './../search/SearchForm.jsx';
 
 let mainLinks = [
     { name: 'Home', url: '/', slug: 'home'},
-    { name: 'Mining Boom', url: '/next-mining-boom', slug: 'nmb'}
+    { name: 'Mining Boom', url: '/next-mining-boom', slug: 'nmb'},
+    { name: 'Oil Rush', url: '/the-next-oil-rush', slug: 'nor'},
+    { name: 'Tech Stock', url: '/next-tech-stock', slug: 'nts'},
+    { name: 'Small Cap', url: '/next-small-cap', slug: 'nsc'},
+    { name: 'Biotech', url: '/next-biotech', slug: 'nbt'}    
 ];
 
 export default class Header extends React.Component {

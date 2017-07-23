@@ -1,42 +1,87 @@
-/**
- * webpack.config.server.js
- *
- * (C) 2017 mobile.de GmbH
- *
- * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
- * @since 09 Feb 2017
- */
+const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+    template: __dirname + '/app/index.html',
+    filename: 'index.html',
+    inject: 'body'
+});
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const nodeExternals = require('webpack-node-externals');
-const path = require('path');
-const srcPath = path.resolve(__dirname, 'src');
-const distPath = path.resolve(__dirname, 'dist');
+const extractSass = new ExtractTextPlugin({ // define where to save the file
+      filename: 'bundle.css',
+      allChunks: true
+});
+
+const minifyJS = new webpack.optimize.UglifyJsPlugin({
+    minimize: true
+});
+
 
 module.exports = {
-    context: srcPath,
-    entry: './server/index.js',
-    output: {
-        path: distPath,
-        filename: 'server.js'
-    },
     target: 'node',
-    node: {
-        __dirname: false,
-        __filename: false
-    },
-    resolve: {
-        modules: ['node_modules', 'src'],
-        extensions: ['*', '.js', '.json']
-    },
+    
+    entry: [__dirname + '/app/server/index.js', __dirname + '/app/client/index.css'],
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: 'babel-loader'
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: './images/[name].[ext]',
+                },
+            },
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true
+                    }
+                }],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf)$/,
+                loader: 'file-loader',
+                options: {
+                    name: './fonts/[name].[ext]',
+                },
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true
+                            }
+
+                        }, 
+                        {loader: 'sass-loader'}, 
+                        {loader: 'postcss-loader'}
+                    ],
+                    fallback: 'style-loader'
+                })
             }
         ]
     },
-    externals: nodeExternals(),
-    devtool: 'source-map'
+    output: {
+        path: __dirname + '/static',
+        filename: 'server.js',
+        publicPath: '/'
+    },
+    devServer: {
+        port: 3000
+    },
+    plugins: [extractSass, minifyJS]
 };
