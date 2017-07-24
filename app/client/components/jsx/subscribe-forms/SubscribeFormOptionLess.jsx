@@ -1,9 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
-//import $ from "jquery";
-//var querystring = require('querystring');
 import Parser from 'html-react-parser';
-
+import HmacSHA1 from 'crypto-js/hmac-sha1';
+import Base64 from 'crypto-js/enc-base64' ;
 
 /*
   Renders the Subscription Form
@@ -30,6 +29,13 @@ export default class SubscribeFormOptionLess extends React.Component {
 		this.handleChange = this.handleChange.bind(this);
     	this.handleSubmit = this.handleSubmit.bind(this);
 	}
+
+	CalculateSig(stringToSign, privateKey){
+	    //calculate the signature needed for authentication
+	    let hash = HmacSHA1(stringToSign, privateKey);
+	    let base64 = hash.toString(Base64);
+	    return encodeURIComponent(base64);
+	}	
 
 	handleChange(event) {
 		const target = event.target;
@@ -72,16 +78,23 @@ export default class SubscribeFormOptionLess extends React.Component {
 	}
 
  	handleSubmit(event) {
-		let values = {input_values : {input_1 : 'Testing2', input_11 : 'test@gmail.com'}}
+		let values = {input_values : {input_1 : this.state.name, input_11 : this.state.email}}
 		let values_json = JSON.stringify(values);
 		let message = '', status = '';
     	let _this = this;
+    	let publicKey = '00fe4fea99';
+    	let privateKey = 'a011700d97571cb';
+    	let method = 'POST';
+    	let route = 'forms/45/submissions';
+    	let d = new Date;
+    	let expiration = 3600;
+    	let unixtime = parseInt(d.getTime() / 1000);
+    	let future_unixtime = unixtime + expiration;
+    	let stringToSign = publicKey + ":" + method + ":" + route + ":" + future_unixtime;
+    	let sig = this.CalculateSig(stringToSign, privateKey);
+		let url = 'http://nextinvestors.thebrauxellamp.com/next-mining-boom/gravityformsapi/' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
 
-		/*$.post('http://nextinvestors.thebrauxellamp.com/next-mining-boom/gravityformsapi/forms/45/submissions?api_key=00fe4fea99&signature=Lw7yTeP%2BiqzzSeC2qSlNsoAcb74%3D&expires=1500944348', values_json, function(data){
-		    console.log(data.response);
-		});*/
-
-		Axios.post('http://nextinvestors.thebrauxellamp.com/next-mining-boom/gravityformsapi/forms/45/submissions?api_key=00fe4fea99&signature=Lw7yTeP%2BiqzzSeC2qSlNsoAcb74%3D&expires=1500944348', values_json)
+		Axios.post(url, values_json)
 		  .then(function (response) {
 		    console.log(response);
 		    message = response.data.response.confirmation_message;
@@ -95,8 +108,6 @@ export default class SubscribeFormOptionLess extends React.Component {
 		    console.log(error);
 		});
 
-		console.log('in');
-
     	event.preventDefault();
   	}
 
@@ -105,12 +116,6 @@ export default class SubscribeFormOptionLess extends React.Component {
 		let buttonStyles = this.state.formValid ? 'btn btn-secondary mt-4 border-0 active' : 'btn btn-secondary mt-4 border-0 disabled';
 		let formStyles = this.state.status ? 'hider mt-4' : 'mt-4';
 		let message = this.state.message;
-
-		if(message) {
-			console.log('message');
-		} else {
-			console.log('no wss');
-		}
 
 		return(
 			<div>
