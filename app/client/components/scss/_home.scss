@@ -333,27 +333,27 @@
 		@include media-breakpoint-up(lg) {
 			padding-top: 120px;
 			padding-bottom: 190px;
-		}
-		
-		&.nmb-panel {
-			background-image:url(components/images/banners/nmb_panel.jpg);
-		}
-		&.nor-panel {
-			background-image:url(components/images/banners/oil-panel.jpg);
-		}
-		&.nts-panel {
-			background-image:url(components/images/banners/techstock-panel.jpg);
-			position: relative;
-		}
-		&.nsc-panel {
-			background-image:url(components/images/banners/smallcap-panel.jpg);
-		}
-		&.nbt-panel {
-			background-image:url(components/images/banners/nbt-panel.jpg);
-		}
-		&.raisebook-panel {
-			background-image:url(components/images/banners/raisebook-panel.jpg);
-			text-align: center;
-		}
+		}		
 	}
+}
+
+#nmb-panel {
+	background-image:url(components/images/banners/nmb_panel.jpg);
+}
+#nor-panel {
+	background-image:url(components/images/banners/oil-panel.jpg);
+}
+#nts-panel {
+	background-image:url(components/images/banners/techstock-panel.jpg);
+	position: relative;
+}
+#nsc-panel {
+	background-image:url(components/images/banners/smallcap-panel.jpg);
+}
+#nbt-panel {
+	background-image:url(components/images/banners/nbt-panel.jpg);
+}
+#raisebook-panel {
+	background-image:url(components/images/banners/raisebook-panel.jpg);
+	text-align: center;
 }

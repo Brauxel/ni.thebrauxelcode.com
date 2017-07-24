@@ -77,7 +77,7 @@ export default class SubscribeFormOptions extends React.Component {
         //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //xhttp.send("fname=Henry&lname=Ford");
 
-		/*axios.post('bin/FormController.php', {
+		axios.post('http://nextinvestors.thebrauxellamp.com/wp-content/themes/next-investors-v3/bin/ReactForm.php', {
 		    firstName: this.state.name
 		  })
 		  .then(function (response) {
@@ -85,7 +85,7 @@ export default class SubscribeFormOptions extends React.Component {
 		  })
 		  .catch(function (error) {
 		    console.log(error);
-		});*/
+		});
 
 		console.log(this.state.name);
 

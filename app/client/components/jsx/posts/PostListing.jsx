@@ -5,6 +5,30 @@ import Post from './PostPreview.jsx';
 import SubscribeForm from './../subscribe-forms/SubscribeFormOptionLess.jsx';
 import CurrentStock from './../companies/CurrentStock.jsx';
 import RaisebookLogo from './../../images/logos/raisebook.svg';
+import ImageScanner from './../helpers/ImageScanner.jsx';
+
+// This function automates the import of images
+// @param folder_path
+// @param keep_paths
+// @param extensions_to_scan
+// @return array['image_name' => image_path]
+const logos = ImageScanner(require.context('../../images/logos', false, /\.(png|jpe?g|svg)$/));
+
+let parentStylers = {
+	'next-mining-boom' : 'blog-9',
+	'the-next-oil-rush' : 'blog-10',
+	'next-tech-stock' : 'blog-12',
+	'next-small-cap' : 'blog-13',	
+	'next-biotech' : 'blog-15',
+};
+
+let siteLogos = {
+	'next-mining-boom' : logos['nmb.svg'],
+	'the-next-oil-rush' : logos['nor.svg'],
+	'next-tech-stock' : logos['nts.svg'],
+	'next-small-cap' : logos['nsc.svg'],	
+	'next-biotech' : logos['nbt.svg'],
+};
 
 export default class PostsListing extends React.Component {
 	constructor(props) {
@@ -52,7 +76,7 @@ export default class PostsListing extends React.Component {
 		console.log("render");
 
 		return(
-			<main id="blog" className="home page-template page-template-internal-home page-template-internal-home-php page page-id-1508 blog-9 with-alert">
+			<main id={parentStylers[this.state.site]} className="home page-template page-template-internal-home page-template-internal-home-php page page-id-1508 blog">
 	    		<div className="jumbotron banner">
 	    			<div className="overlay">&nbsp;</div>
 	    			<section className="banner-content align-middle">
@@ -60,7 +84,7 @@ export default class PostsListing extends React.Component {
 	    					<div className="container">
 	    						<div className="row">
 	    							<div className="col-xl-5 mb-5">
-										<a href="#"><img src={this.props.logo} alt="" title="" height="55" /></a>
+										<a href="#"><img src={siteLogos[this.state.site]} alt="" title="" height="55" /></a>
 	    							</div>
 	    							
 	    							<div className="col-xl-7 form-holder">
