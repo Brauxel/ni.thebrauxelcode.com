@@ -4,6 +4,30 @@ import SubscribeForm from './../subscribe-forms/SubscribeFormOptionLess.jsx';
 import RaisebookLogo from './../../images/logos/raisebook.svg';
 import Axios from 'axios';
 import Parser from 'html-react-parser';
+import ImageScanner from './../helpers/ImageScanner.jsx';
+
+// This function automates the import of images
+// @param folder_path
+// @param keep_paths
+// @param extensions_to_scan
+// @return array['image_name' => image_path]
+const logos = ImageScanner(require.context('../../images/logos', false, /\.(png|jpe?g|svg)$/));
+
+let parentStylers = {
+	'next-mining-boom' : 'blog-9',
+	'the-next-oil-rush' : 'blog-10',
+	'next-tech-stock' : 'blog-12',
+	'next-small-cap' : 'blog-13',	
+	'next-biotech' : 'blog-15',
+};
+
+let siteLogos = {
+	'next-mining-boom' : logos['nmb.svg'],
+	'the-next-oil-rush' : logos['nor.svg'],
+	'next-tech-stock' : logos['nts.svg'],
+	'next-small-cap' : logos['nsc.svg'],	
+	'next-biotech' : logos['nbt.svg'],
+};
 
 export default class Post extends React.Component {
   	constructor(props){
@@ -11,9 +35,9 @@ export default class Post extends React.Component {
 
 	    let _this = this;
 	    let post = {};
-	    let postUrl = 'http://nextinvestors.thebrauxellamp.com/next-mining-boom/wp-json/wp/v2/posts?slug='+this.props.match.params.slug;
+	    let postUrl = 'http://nextinvestors.thebrauxellamp.com/' + this.props.match.params.site  + '/wp-json/wp/v2/posts?slug=' + this.props.match.params.slug;
 
-	    this.state = { "post" : { title: { rendered: "" }, content: { rendered: ""}, author_name: "", categoryID: 0, category_name: ""}}
+	    this.state = { "post" : { title: { rendered: "" }, content: { rendered: ""}, author_name: "", categoryID: 0, category_name: ""}, "site": this.props.match.params.site}
 
 	    Axios.get(postUrl).then(function(response) {
 	      post = response.data;
@@ -27,7 +51,7 @@ export default class Post extends React.Component {
     	prettyDate = prettyDate.substr(0,prettyDate.length-1).replace(/\//ig, '-');
 
 		return(
-			<main id="post">
+			<main id={parentStylers[this.state.site]}>
 	    		<div className="jumbotron banner">
 	    			<div className="overlay">&nbsp;</div>
 	    			<section className="banner-content align-middle">
@@ -35,7 +59,7 @@ export default class Post extends React.Component {
 	    					<div className="container">
 	    						<div className="row">
 	    							<div className="col-xl-5 mb-5">
-										<a href="#"><img src={this.props.data.logo} alt="" title="" height="55" /></a>
+										<a href="#"><img src={siteLogos[this.state.site]} alt="" title="" height="55" /></a>
 	    							</div>
 	    							
 	    							<div className="col-xl-7 form-holder">

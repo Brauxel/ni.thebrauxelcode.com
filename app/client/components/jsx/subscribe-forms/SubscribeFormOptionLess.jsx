@@ -99,8 +99,6 @@ export default class SubscribeFormOptionLess extends React.Component {
 		    console.log(response);
 		    message = response.data.response.confirmation_message;
 		    status= response.status;
-		    console.log(status);
-		    console.log(message);
 
       		_this.setState({message: message, status: status});
 		  })

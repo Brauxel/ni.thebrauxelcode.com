@@ -21,14 +21,14 @@ export default class extends React.Component {
 		return(
 			<article className="row blog-brief pt-5 pb-5">
 				<div className="col-md-2">
-					<Link to={"/post/" + this.props.data.slug}><PreviewImage mediaId={this.props.data.featured_media} site={this.state.site} /></Link>
+					<Link to={this.props.site + '/' + this.props.data.slug}><PreviewImage mediaId={this.props.data.featured_media} site={this.state.site} /></Link>
 				</div>
 									
 				<div className="col-md-9 synopsis pt-4 pb-4">
-					<h2><Link to={"/next-mining-boom/" + this.props.data.slug}>{this.props.data.title.rendered}</Link></h2>
+					<h2><Link to={this.props.site + '/' + this.props.data.slug}>{this.props.data.title.rendered}</Link></h2>
 					<p className="date">Apr 4, 2017</p>
 					{Parser(this.props.data.excerpt.rendered)}
-					<a href="#" className="btn btn-outline-primary float-right mt-5">Read Article</a>
+					<Link to={this.props.site + '/' + this.props.data.slug} className="btn btn-outline-primary float-right mt-5">Read Article</Link>
 				</div>
 	    	</article>
 		);

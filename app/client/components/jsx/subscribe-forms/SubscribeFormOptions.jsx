@@ -124,7 +124,7 @@ export default class SubscribeFormOptions extends React.Component {
 
 				<div className="row mt-5">
 					<div className="col-lg-12">
-						<button className={buttonStyles} type="submit" disabled={!this.state.formValid}>Keep me informed about all next investor articles</button>
+						<button className={buttonStyles} type="submit" disabled={!this.state.formValid}>Keep me informed</button>
 					</div>
 				</div>
 			</form>

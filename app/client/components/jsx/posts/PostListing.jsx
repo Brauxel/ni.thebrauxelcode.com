@@ -109,6 +109,9 @@ export default class PostsListing extends React.Component {
 						              )
 						            }
 						          )}
+						          <div className="wp-pagenavi">
+						          	<span className="current">1</span>
+						          </div>
 	    						</section>
 
 	    						<div className="col-md-12">
@@ -125,10 +128,6 @@ export default class PostsListing extends React.Component {
 											<CurrentStock logo='http://v3.nextminingboom.com/wp-content/uploads/sites/9/2017/05/MAG.jpg' code='ASX: MAG' />
 										</div>
 	    							</div>
-	    						</div>
-
-	    						<div className="col-md-12">
-	    							form goes here
 	    						</div>
 
 								<div className="col-md-12 raisebook-block pt-5 pb-5 text-center">

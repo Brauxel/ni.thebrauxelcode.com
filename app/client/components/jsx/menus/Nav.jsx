@@ -14,16 +14,18 @@ export default class Nav extends React.Component {
     let items = this.props.items;
     
     return (
-        <nav>
-          <div className="navbar-res">
-            <SearchForm />
+        <nav className={this.props.styles}>
+          <div className="align-middle">
+            <div className="navbar-res">
+              <SearchForm />
+            </div>
+              
+            <ul className="main-menu row text-left">
+              { items.map(function(l, index) {
+                return <li key={l.slug} className="col-lg-2"><Link to={l.url}><span>Next </span>{l.name}</Link></li>
+              })}
+            </ul>
           </div>
-            
-          <ul className="main-menu row text-left">
-            { items.map(function(l, index) {
-              return <li key={l.slug} className="col-lg-2"><Link to={l.url}><span>Next </span>{l.name}</Link></li>
-            })}
-          </ul>
         </nav>
     );
   }
